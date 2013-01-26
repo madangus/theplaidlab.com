@@ -4,5 +4,7 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+	var now = new Date();
+	var copyYear = now.getFullYear();
+	res.render('index', { title: 'theplaidlab.com', copyYear: copyYear });
 };

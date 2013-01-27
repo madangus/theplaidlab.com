@@ -23,6 +23,7 @@ app.configure(function(){
   app.use(app.router);
 
   app.use(stylus.middleware({
+    debug: true,
     src: __dirname + '/views',
     dest: __dirname + '/public'
   }));

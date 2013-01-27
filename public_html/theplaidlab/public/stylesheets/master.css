@@ -1,3 +1,50 @@
+/* theplaidlab.com master styles */
+/* basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+/* plaidlab proper begins */
+/*
+*	Sizing formula is always: target (i.e. desired) size / context size
+*		context size varies depending on if we are dealing with fonts or widths and within widths slight change for margin/padding		
+*
+*		font size - For most browsers rems are supported and context size is the font size of the html root, 16px.
+*			IE 8, older mobile - provide an em based fallback where context size is the font size of the containing element. 
+*
+*		master horizontal width - Using ems to provide a tangible reference size for content area - an 'ideal' of 1024px across.
+*			context size is the font size of the containing element	
+*
+*		vertical widths - context size is the -font size- of the containing element. Using ems since the vertical is based on the text size.* 			No rems here since we want the inner margins and padding to keep proportion with what's around them	
+*
+*		inner horizontal widths - margins, padding, et al
+*			context size is the target pixel width of the containing element
+*/
+html {
+  font-size: 100%;
+/* 16px (probably) */
+}
 body {
-  margin: 80px;
+  font-size: 0.875rem;
+/* 14/16 */
+  line-height: 1.125em;
+/* 18/16 */
+  padding: 0;
+}
+body #contentWrapper {
+  margin: 16px auto;
+  max-width: 94%;
+  width: 73.14em;
+/* 1024/14 */
+}
+body #contentWrapper h1 {
+  font-size: 1.5rem;
+/* 24/16 */
+  margin: 1.8em 0.015625%;
+/* H: 16/24 V: 16 / 1024 */
+}
+body #contentWrapper p {
+  margin: 1em 0.01171875%;
+/* 12/1024 */
 }

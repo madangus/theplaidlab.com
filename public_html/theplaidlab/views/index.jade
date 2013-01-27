@@ -1,99 +1,100 @@
 extends layout
 
 block content
-	h1= title
-	p Welcome to #{title}. 
-  
-	section.weeBio
-		h2 Dominic Aveyard, web piper
-		p A developer for over a decade, currently specializing in the modern web front end: 
-		ul
-			li	Semantic HTML 5 
-				em content, the whole content and nothing but the content!
-			li	Scalable OO Javascript 
-				em rejoyce in functions as first class objects, pester not the global space, big complexity === minimal publicity!
-			li	OO CSS 3 
-				em it's a beautiful class based language, worthy of <a href="http://en.wikipedia.org/wiki/Alexander_%27Greek%27_Thompson">serious architecture</a> - not a wastebasket for thousands of smudged stickies! 
-			li	... all running atop (mostly) JSP, Ruby on Rails and PHP. Plus one strange, pretty XSL driven creature.
+	div#contentWrapper
+		h1= title
+		p Welcome to #{title}. 
 
-	section.tinkering
-		h2 Current tinkering
-		p This very site is built with node.js -> express with jade templating. For the fun of a new adventure, mostly.
-		p Objective C and iOS also fills some nights and weekends in my techie home.
-		p Cyanogenmod on my HTC One S, though, honestly that road is probably one I should have turned away from. Curiousity, alas!
+		section.weeBio
+			h2 Dominic Aveyard, web piper
+			p A developer for over a decade, currently specializing in the modern web front end: 
+			ul
+				li	Semantic HTML 5 
+					em content, the whole content and nothing but the content!
+				li	Scalable OO Javascript 
+					em rejoyce in functions as first class objects, pester not the global space, big complexity === minimal publicity!
+				li	OO CSS 3 
+					em it's a beautiful class based language, worthy of <a href="http://en.wikipedia.org/wiki/Alexander_%27Greek%27_Thompson">serious architecture</a> - not a wastebasket for thousands of smudged stickies! 
+				li	... all running atop (mostly) JSP, Ruby on Rails and PHP. Plus one strange, pretty XSL driven creature.
 
-	div.stage
-		section.portfolio
-			h2 Portfolio
+		section.tinkering
+			h2 Current tinkering
+			p This very site is built with node.js -> express with jade templating. For the fun of a new adventure, mostly.
+			p Objective C and iOS also fills some nights and weekends in my techie home.
+			p Cyanogenmod on my HTC One S, though, honestly that road is probably one I should have turned away from. Curiousity, alas!
 
-			article#blair
-				h3 William Blair - <em>Summit</em> - Internal stock analysis and trade tool 
-				p Summit provides the William Blair team a unique in-house edge. I ramped up quickly - learning the business and technical domain, adding features and correcting bugs. Becoming the 'owner' of the front end quickly allowed the original team to smoothly transition to new projects.
-				ul.tech
-					li	Built with the <a href="http://javascriptmvc.com">Javascript-MVC framework</a>, <a href="https://developer.mozilla.org/en-US/docs/Rhino">Rhino</a> and <a href="http://www.mongodb.org">MongoDB</a>.
-					li	Codebase organized into global components and more granular views composed of modules. 
-					li	Heavy use of SVG for graphing, leveraging the commercial <a href="http://www.highcharts.com">Highcharts</a> library.
+		div.stage
+			section.portfolio
+				h2 Portfolio
 
-				div.thoughts
-					h4 JavascriptMVC... Bland name, mature framework
-					p JMVC is JQuery based and offers a lot that is similar to Backbone.js, Ember.js, Angular.js, something-new-just-came-out.js - with some notable differences:
-					ul
-						li	The core model, view and controller objects are essentially JQuery plug-ins - jQueryMX being their family name.
-						li	The JQuery base does make event registration easy, though I prefer the Backbone.js hash method - since it's ...
-							ul
-								li	a wee bit more concise... 
-								li	and encourages separating callbacks into independent functions... 
-								li	which can be easy not to do, in a false economy - deadline coming kinda way, but the extra couple of lines makes testing much easier. And you will feel warmer all day. (There are some other great tips in this <a href="http://shop.oreilly.com/product/0636920025245.do">excellent read</a>)
-						li	Steal.js - part of the full JMVC package - offers dependency managment and production build options. Similar in some ways to require.js.
-						li	There is extensive testing and documentation support as part of the JMVC full package.
-						li	The framework is very supportive/opinionated <a href="http://javascriptmvc.com/docs.html#!organizing">about how code is structured</a> and borrows a smidge from Ruby on Rails. 
-						li	Unlike backbone.js, there is no default routing mechanism (odd given the RoR influence).
-						li	A stable and battle tested framework but does not seem as active or popular as backbone.js or angular.js. 
+				article#blair
+					h3 William Blair - <em>Summit</em> - Internal stock analysis and trade tool 
+					p Summit provides the William Blair team a unique in-house edge. I ramped up quickly - learning the business and technical domain, adding features and correcting bugs. Becoming the 'owner' of the front end quickly allowed the original team to smoothly transition to new projects.
+					ul.tech
+						li	Built with the <a href="http://javascriptmvc.com">Javascript-MVC framework</a>, <a href="https://developer.mozilla.org/en-US/docs/Rhino">Rhino</a> and <a href="http://www.mongodb.org">MongoDB</a>.
+						li	Codebase organized into global components and more granular views composed of modules. 
+						li	Heavy use of SVG for graphing, leveraging the commercial <a href="http://www.highcharts.com">Highcharts</a> library.
 
-			article#msg
-				h3 Madison Square Garden - <a href="http://www.msg.com">msg.com</a> - TV Network and Event site	
-				p Revved up and ready for tablets, mobiles and super wide displays - the redesigned msg.com emphasises HD content and leverages responsive design to complement the fans experience anywhere. I joined the team in the last push to finish the project, working on a CSS 3 driven prototype and the final production "Browse All Videos" page (#4 site destination). I employed modular construction of search, sort, filter and paginate js allowing the team to use it across the site with minimal effort.
+					div.thoughts
+						h4 JavascriptMVC... Bland name, mature framework
+						p JMVC is JQuery based and offers a lot that is similar to Backbone.js, Ember.js, Angular.js, something-new-just-came-out.js - with some notable differences:
+						ul
+							li	The core model, view and controller objects are essentially JQuery plug-ins - jQueryMX being their family name.
+							li	The JQuery base does make event registration easy, though I prefer the Backbone.js hash method - since it's ...
+								ul
+									li	a wee bit more concise... 
+									li	and encourages separating callbacks into independent functions... 
+									li	which can be easy not to do, in a false economy - deadline coming kinda way, but the extra couple of lines makes testing much easier. And you will feel warmer all day. (There are some other great tips in this <a href="http://shop.oreilly.com/product/0636920025245.do">excellent read</a>)
+							li	Steal.js - part of the full JMVC package - offers dependency managment and production build options. Similar in some ways to require.js.
+							li	There is extensive testing and documentation support as part of the JMVC full package.
+							li	The framework is very supportive/opinionated <a href="http://javascriptmvc.com/docs.html#!organizing">about how code is structured</a> and borrows a smidge from Ruby on Rails. 
+							li	Unlike backbone.js, there is no default routing mechanism (odd given the RoR influence).
+							li	A stable and battle tested framework but does not seem as active or popular as backbone.js or angular.js. 
 
-				ul.tech
-					li	Built with JSP via the Adobe CQ based backend.
-					li	Responsively designed to the core - layout, content and images adjust to the size and <em>likely</em> pixel density
-					| of the guests device.
-					li	CSS 3 Fonts, animation and HTML 5 markup. All without leaving IE 8 and other elders(?) in the cold, of course.
-					li	Javascript organized into namespaced modules, using immediately executing function expressions to abate the global hobgoblins.
+				article#msg
+					h3 Madison Square Garden - <a href="http://www.msg.com">msg.com</a> - TV Network and Event site	
+					p Revved up and ready for tablets, mobiles and super wide displays - the redesigned msg.com emphasises HD content and leverages responsive design to complement the fans experience anywhere. I joined the team in the last push to finish the project, working on a CSS 3 driven prototype and the final production "Browse All Videos" page (#4 site destination). I employed modular construction of search, sort, filter and paginate js allowing the team to use it across the site with minimal effort.
 
-			article#herff
-				h3 Herff Jones - <a href="http://highschool.herffjones.com">High School Commerce and Ring Designer</a> - E-Commerce site	
-				p A major overhaul for this e-commerce site featuring popular graduation products and a vastly improved ring designer featuring 3D preview and social media integration. I mentored and trained the frontend team, developing style guides, coding standards and best practices. Using a backbone based js framework, I developed key parts of the ring designer, including phone/tablet friendly hide/reveal and animation. To increase engagement I developed the ring gallery with social media integration.
-				p As the release approached, I made some final, safe improvements to various aspects of the site*, completed documentation and supported the transition to a small extended maintainance team.
-				p * Refactoring is wonderful, but a few weeks from release, often a deep breath is in order. It can be hard for a developer who cares but performing small and targeted improvements of the most value - that is the best for everyone close to final release. 
+					ul.tech
+						li	Built with JSP via the Adobe CQ based backend.
+						li	Responsively designed to the core - layout, content and images adjust to the size and <em>likely</em> pixel density
+						| of the guests device.
+						li	CSS 3 Fonts, animation and HTML 5 markup. All without leaving IE 8 and other elders(?) in the cold, of course.
+						li	Javascript organized into namespaced modules, using immediately executing function expressions to abate the global hobgoblins.
 
-				ul.tech
-					li Built with JSP via the Adobe CQ based backend, Twitter Bootstrap framework and for the ring designer - 1 page backbone based js and Flash.
-					li Used a somewhat tweaked implementation of the <a href="http://books.google.com/books?id=WTZqecc9olUC&lpg=PA103&ots=KaHvSkmKXt&dq=js%20sandbox%20pattern&pg=PA103#v=onepage&q=js%20sandbox%20pattern&f=false">sandbox pattern</a> to provide organization, easier debugging and reuse for the non-ring site js.
-					li An essentials only build of Bootstrap with OO CSS patterns to provide robust, cohesive styling without a labyrinth of floats (tables by another name when in excess, I fear).
+				article#herff
+					h3 Herff Jones - <a href="http://highschool.herffjones.com">High School Commerce and Ring Designer</a> - E-Commerce site	
+					p A major overhaul for this e-commerce site featuring popular graduation products and a vastly improved ring designer featuring 3D preview and social media integration. I mentored and trained the frontend team, developing style guides, coding standards and best practices. Using a backbone based js framework, I developed key parts of the ring designer, including phone/tablet friendly hide/reveal and animation. To increase engagement I developed the ring gallery with social media integration.
+					p As the release approached, I made some final, safe improvements to various aspects of the site*, completed documentation and supported the transition to a small extended maintainance team.
+					p * Refactoring is wonderful, but a few weeks from release, often a deep breath is in order. It can be hard for a developer who cares but performing small and targeted improvements of the most value - that is the best for everyone close to final release. 
 
-			article#orbitz
-				h3 Orbitz Worldwide - <a href="http://www.orbitz.com/hotels/">Orbitz Hotels</a> - E-Commerce site
-				p After a successful period working on the Orbitz "classic" platform, blogs, Open Cuba and Orbitz for Business - I joined the high profile hotel team. This was the most critical product to the company and all features and bug fixes had to meet the highest accessibility and browser support standards across 17 points of sale; the same experience being served to millions of visitors daily across the Americas, Europe and Asia. 
-				p Our team implemented custom functionality on top of google maps, to help improve a customers ability to plan travel by providing a better sense of their chosen destination - amenities, hotel variety, local attractions etc. Various versions were MVT tested and features included adding expanded markers, microcontent with CSS3 transitions, various sizes and default states - wee map / big map / expanded or collapsed by default.
-				p I led a major refactoring of the map javascript objects, leveraging prototypical inheritance, to ease development and provide the Business more reliable releases and allow the various map permutations to be happily isolated.
+					ul.tech
+						li Built with JSP via the Adobe CQ based backend, Twitter Bootstrap framework and for the ring designer - 1 page backbone based js and Flash.
+						li Used a somewhat tweaked implementation of the <a href="http://books.google.com/books?id=WTZqecc9olUC&lpg=PA103&ots=KaHvSkmKXt&dq=js%20sandbox%20pattern&pg=PA103#v=onepage&q=js%20sandbox%20pattern&f=false">sandbox pattern</a> to provide organization, easier debugging and reuse for the non-ring site js.
+						li An essentials only build of Bootstrap with OO CSS patterns to provide robust, cohesive styling without a labyrinth of floats (tables by another name when in excess, I fear).
 
-				ul.tech
-					li Built with JSP on a custom "render" framework that supported flexible designs, multiple languages and currencies.
-					li Custom fully OO javascript using custom events, google maps api and the prototype.js library to ease cross browser support. This also provided much of the extended object model seen in ECMAScript 5.
-					li First example of <a href="http://en.wikipedia.org/wiki/Glasgow_patter">Glaswegian</a> in the semantic markup of hotel search results. As of Jan 2013, div.weeResultsMapContainer is still there!
+				article#orbitz
+					h3 Orbitz Worldwide - <a href="http://www.orbitz.com/hotels/">Orbitz Hotels</a> - E-Commerce site
+					p After a successful period working on the Orbitz "classic" platform, blogs, Open Cuba and Orbitz for Business - I joined the high profile hotel team. This was the most critical product to the company and all features and bug fixes had to meet the highest accessibility and browser support standards across 17 points of sale; the same experience being served to millions of visitors daily across the Americas, Europe and Asia. 
+					p Our team implemented custom functionality on top of google maps, to help improve a customers ability to plan travel by providing a better sense of their chosen destination - amenities, hotel variety, local attractions etc. Various versions were MVT tested and features included adding expanded markers, microcontent with CSS3 transitions, various sizes and default states - wee map / big map / expanded or collapsed by default.
+					p I led a major refactoring of the map javascript objects, leveraging prototypical inheritance, to ease development and provide the Business more reliable releases and allow the various map permutations to be happily isolated.
 
-			article#login
-				h3 Orbitz For Business - <a href="https://www.orbitzforbusiness.net/Secure/OFBSignIn">Login</a> - Business to business commerce
-				p One of the shortest and yet most satisfying projects I completed. Orbitz for Business is a highly customised travel site allowing corporate customers to set allowable rates, control preferred carriers and generally manage all aspects of corporate travel. Their employees benefit from a familiar Orbitz search and book experience.
-				p Originally the site was developed by branching the lesuire site, resulting in a login page which featured product tabs, several css and js downloads and several background graphics. A lot of this did not make sense in the corporate context, for example, product tabs were only accessible after logging in!
-				p I discussed the idea of optimizing the page with stakeholders and on the green light, spent a couple of days slimming it down to the bare essentials. Logging in is a necessary annoyance to customers, so my goal was to make it as fast and forgettable as possible.
+					ul.tech
+						li Built with JSP on a custom "render" framework that supported flexible designs, multiple languages and currencies.
+						li Custom fully OO javascript using custom events, google maps api and the prototype.js library to ease cross browser support. This also provided much of the extended object model seen in ECMAScript 5.
+						li First example of <a href="http://en.wikipedia.org/wiki/Glasgow_patter">Glaswegian</a> in the semantic markup of hotel search results. As of Jan 2013, div.weeResultsMapContainer is still there!
 
-				ul.tech
-					li Reduced several css and js http requests to a single js call for the essential webtrends.
-					li Abstracted a core set of minimal styles and moved them to the <head> of the page - usually an anti-pattern but in this case, it vastly reduced the style weight of the page and removed the overhead of an additional http request.
-					li Eliminated several rounded corner background images and such, bringing the design in line with the modern Orbitz feel.
-					li Raised the YSlow score from a C to an A, making each page load several hundred kb lighter. This adds up significantly when scaled to 160,000 requests per month.
+				article#login
+					h3 Orbitz For Business - <a href="https://www.orbitzforbusiness.net/Secure/OFBSignIn">Login</a> - Business to business commerce
+					p One of the shortest and yet most satisfying projects I completed. Orbitz for Business is a highly customised travel site allowing corporate customers to set allowable rates, control preferred carriers and generally manage all aspects of corporate travel. Their employees benefit from a familiar Orbitz search and book experience.
+					p Originally the site was developed by branching the lesuire site, resulting in a login page which featured product tabs, several css and js downloads and several background graphics. A lot of this did not make sense in the corporate context, for example, product tabs were only accessible after logging in!
+					p I discussed the idea of optimizing the page with stakeholders and on the green light, spent a couple of days slimming it down to the bare essentials. Logging in is a necessary annoyance to customers, so my goal was to make it as fast and forgettable as possible.
+
+					ul.tech
+						li Reduced several css and js http requests to a single js call for the essential webtrends.
+						li Abstracted a core set of minimal styles and moved them to the <head> of the page - usually an anti-pattern but in this case, it vastly reduced the style weight of the page and removed the overhead of an additional http request.
+						li Eliminated several rounded corner background images and such, bringing the design in line with the modern Orbitz feel.
+						li Raised the YSlow score from a C to an A, making each page load several hundred kb lighter. This adds up significantly when scaled to 160,000 requests per month.
 
 
 

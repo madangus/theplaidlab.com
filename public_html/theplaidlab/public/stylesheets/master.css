@@ -152,7 +152,9 @@ body #contentWrapper {
   max-width: 94%;
   width: 73.142em;
 /* 1024/14 */
+/* wee utility beasties */
 /* title */
+/* intro */
 }
 body #contentWrapper h1 {
   display: inline-block;
@@ -190,7 +192,7 @@ body #contentWrapper h4 {
 body #contentWrapper p {
   font-size: 0.875rem;
 /* 14 / 16 */
-  line-height: 1.28571428571429em;
+  line-height: 1.286em;
 /* 18/14 */
   margin: 1.286em 0;
 /* V: 18/14 */
@@ -198,12 +200,12 @@ body #contentWrapper p {
 body #contentWrapper ul {
   line-height: 1.286em;
 /* 18/14 */
-  margin: 1.28571428571429em 0;
+  margin: 1.286em 0;
 /* V: 18/14 */
 }
 body #contentWrapper ul li {
   list-style-type: none;
-  margin-left: 1.28571428571429%;
+  margin-left: 1.286%;
 /* 18/14 */
 }
 body #contentWrapper li>ul,
@@ -213,8 +215,14 @@ body #contentWrapper ul.nested {
 }
 body #contentWrapper li>ul li,
 body #contentWrapper ul.nested li {
-  margin-left: 2.57142857142857%;
+  margin-left: 2.571%;
 /* 36/14 */
+}
+body #contentWrapper .intro {
+  margin-bottom: 0;
+}
+body #contentWrapper .thoughts ul {
+  margin-top: 0;
 }
 body #contentWrapper #labTitle {
   width: 30%;
@@ -232,4 +240,19 @@ body #contentWrapper #headlineDom {
   font-style: italic;
   text-align: right;
   width: 70%;
+}
+body #contentWrapper .weeBio .content {
+  width: 75.683%;
+/* 775/1024 */
+}
+body #contentWrapper .weeBio .headshot {
+  float: right;
+  margin: 0 3.515% 3.515% 3.515%;
+/* 36/1024 */
+}
+body #contentWrapper .weeBio .webDevElevator {
+  margin-top: 0;
+}
+body #contentWrapper .weeBio .webDevElevator dt {
+  font-weight: bold;
 }

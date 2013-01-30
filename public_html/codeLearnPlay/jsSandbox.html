@@ -1,0 +1,140 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+	<script type="text/javascript">
+		console.log('we begin');
+		
+		console.log('******************************************************');
+		console.log('returning object with a privileged method - closure ')		
+		console.log('******************************************************');
+		
+		var secret = (function() {
+			var minimum = 25, nessie = true;
+			
+			return {
+				isBeastieReal: function(payment) {
+					var result;
+					if (payment >= minimum) {
+						result = 'So the beastie in the stories be ' + nessie;
+					} else {
+						result = 'The mystery can be revealed for a wee bit more cash';
+					}
+					console.log(result);
+				}
+			};
+		}());
+		
+		console.log ('secret is ' + secret);
+		console.log ('try thirsty bucks');
+		secret.isBeastieReal(30);
+		console.log ('try ten bucks');
+		secret.isBeastieReal(10);
+		console.log ('what is the secret.nessie ' + secret.nessie);
+
+		console.log('try secret.isBeastieReal with no param');
+		secret.isBeastieReal();
+
+		
+		console.log('******************************************************');
+		console.log('plain function with - closure ')		
+		console.log('******************************************************');
+		
+		function pubNessie(payment) {
+			var minimum = 25;
+			var nessie = true;
+			function isBeastieReal(payment) {
+				var result;
+				if (payment >= minimum) {
+					result = 'So the beastie in the stories be ' + nessie;
+				} else {
+					result = 'The mystery can be revealed for a wee bit more cash';
+				}
+				console.log(result);
+			}
+			isBeastieReal(payment);			
+		}
+				
+		console.log ('try thirsty bucks with pubNessie func');
+		pubNessie(30);
+
+
+		console.log('******************************************************');
+		console.log('object with public methods and this ')		
+		console.log('******************************************************');
+
+		function PubNessie() {
+			this.minimum = 25;
+			this.nessie = true;
+			var sound = 'eeeeee';
+			this.secretSound = function() {
+				return sound;
+			},
+			function helper() {
+				// internal to constructor only
+			}
+		}
+
+		PubNessie.prototype = {
+			isBeastieReal: function(payment) {
+				var result;
+				if (payment >= this.minimum) {
+					result = 'So the beastie in the stories be ' + this.nessie;
+					result += ' . Nessie says ' + this.secretSound();
+				} else {
+					result = 'The mystery can be revealed for a wee bit more cash';
+				}
+				console.log(result);
+			}			
+		};
+				
+		console.log ('try thirsty bucks');
+		public = new PubNessie();
+		public.isBeastieReal(30);
+		console.log('public this.nessie is - public.nessie = ' + public.nessie);
+		console.log('nessie says via return statement in constructor function ' + public.secretSound());
+
+		console.log('******************************************************');
+		console.log('plain object no constructor ')		
+		console.log('******************************************************');
+		
+		var plainObjNessie = {
+			minimum: 25,
+			nessie: true,
+			isBeastieReal: function(payment) {
+				var result;
+				if (payment >= plainObjNessie.minimum) {
+					result = 'So the beastie in the stories be ' + plainObjNessie.nessie;
+				} else {
+					result = 'The mystery can be revealed for a wee bit more cash';
+				}
+				console.log(result);
+			}
+		};
+		
+		console.log ('try thirsty bucks with pubNessie func');
+		plainObjNessie.isBeastieReal(30);
+
+
+		closureIterator();
+
+		function closureIterator() {
+			window.iteratorMaker = function(arr) {
+				// private counter
+				var i = 0;
+				console.log('You will be returned a function that iterates through the supplied array ' + arr);
+				
+				var iterator = function() {
+					console.log('This is the inner iterator function which through closure still can access the arr ' + arr + ' and counter i ' + i);
+					console.log('array value ' + i + ' is: ' + arr[i++]);
+				}
+
+				console.log('Even though I am about to return, through closure your new function will still see my scope.');
+				return iterator;
+			}		
+		}
+
+	</script>
+	</body>
+</html>

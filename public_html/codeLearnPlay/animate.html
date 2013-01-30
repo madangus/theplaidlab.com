@@ -1,0 +1,104 @@
+<DOCTYPE html>
+
+<html>
+	<head>
+		<style type="text/css">
+		.container {
+			background-color: red;
+			height: 80px;
+			overflow: hidden;
+		}
+
+		.def {
+			background-color: gray;
+			height: 80px;
+			-webkit-transition: margin 0.60s linear 0.10s;		 
+		}
+						
+		.hidden {
+			background-color: green;
+			height: 80px;
+		}
+	
+		.container:hover .def {
+			margin-top:-80px;
+		}
+
+		.container2 {
+			background-color: red;
+			height: 80px;
+			overflow: hidden;
+		}
+
+		.def2 {
+			background-color: gray;
+			height: 80px;
+		}
+						
+		.hidden2 {
+			background-color: green;
+			height: 0;
+			-webkit-transition: height 0.60s linear 0.10s;		 
+		}
+	
+		.container2:hover .hidden2 {
+			height: 80px;
+		}
+
+		.container2:hover .def2 {
+			height: 0;
+		}		
+
+		.container3 {
+			background-color: red;
+			height: 80px;
+			overflow: hidden;
+		}
+
+		.def3 {
+			background-color: gray;
+			height: 80px;
+			-webkit-transition: margin 0.60s linear 0.10s;		 
+		}
+						
+		.hidden3 {
+			background-color: green;
+			height: 0;
+		}
+	
+		.container3:hover .def3 {
+			margin-top:-80px;
+		}
+		
+		.container3:hover .hidden3 {
+			height: 80px;
+		}
+		 	
+		</style>
+		<title></title>
+	</head>
+	<body>
+		<h4>Container with 2 elements, 2nd full height not seen because container shorter with overflow hidden. On hovering on container, the first element visible by default gets a negative top margin equal to its height.</h4>
+		<p>Transition on default element to apply negative margin.</p>
+		<div class="container">
+			<div class="def"></div>
+			<div class="hidden"></div>
+		</div>
+		
+		<h4>Container with 2 elements, 2nd 0px height so not seen. On hovering on container, 2nd element gets full height - auto. And default 1st element gets height 0. Container has overflow set to hidden.</h4>
+		<p>Transition on 2nd element to apply full height.</p>
+		<div class="container2">
+			<div class="def2"></div>
+			<div class="hidden2"></div>
+		</div>		
+		
+		<h4>Container with 2 elements, 2nd full height not seen because height is zero. On hovering on container, the first element visible by default gets a negative top margin equal to its height, 2nd element gets height set to full.</h4>
+		<p>Transition on default element to apply negative margin.</p>		
+		<div class="container3">
+			<div class="def3"></div>
+			<div class="hidden3"></div>
+		</div>		
+				
+	</body>
+</html>
+

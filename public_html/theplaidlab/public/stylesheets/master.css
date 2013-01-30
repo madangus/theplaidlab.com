@@ -1,50 +1,195 @@
 /* theplaidlab.com master styles */
-/* basic reset */
-* {
+/* reset 
+* 		extracted from Eric Meyer CSS reset 2.0 - http://meyerweb.com/eric/tools/css/reset/ 
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/*	The above is effectively setting the html root to 16px, the common 100%.  
+*	However, since cannot be absolutely certain 1 use em based mq brekapoints
+*/
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 /* plaidlab proper begins */
 /*
-*	Sizing formula is always: target (i.e. desired) size / context size
-*		context size varies depending on if we are dealing with fonts or widths and within widths slight change for margin/padding		
 *
-*		font size - For most browsers rems are supported and context size is the font size of the html root, 16px.
+*	Responsive design is a fancy, fast changing beastie. This site uses an elastic layout to display well as screen size increases and
+*	keep a sense of proportion. The max-width constraint on the wrapper stops text becoming stupid long if size is increased.
+*	Later as I add more content, the design may go completely fluid if I come up with a nice widescreen optimized layout.
+*
+*	Of course, the max-width constraint is only one way to prevent dreaded scrollbars as text is resized. This is a god example of not 
+*	using max-width but instead tweaking the font sizes at breakpoints instead - 
+*	http://hicksdesign.co.uk/journal/finally-a-fluid-hicksdesign 
+*
+*		font size - For most browsers rems are supported and formula is desired size / context size - font size of the html root.
 *			IE 8, older mobile - provide an em based fallback where context size is the font size of the containing element. 
 *
-*		master horizontal width - Using ems to provide a tangible reference size for content area - an 'ideal' of 1024px across.
-*			context size is the font size of the containing element	
+*		vertical widths - margins, padding et al in ems since they are inherently tied to the font size 
+*			formula: Base leading is 18px for 14px body font (130% of 14). Increase/descrease font size and leading changes 
+*				proportionally in multiples of 18.		
+*				
+*		master horizontal width set in ems for #contentWrapper - an 'ideal' of 1024px across.
+*			formula: target (i.e. desired) size / context size which is the font size of containing element.	
 *
-*		vertical widths - context size is the -font size- of the containing element. Using ems since the vertical is based on the text size.* 			No rems here since we want the inner margins and padding to keep proportion with what's around them	
-*
-*		inner horizontal widths - margins, padding, et al
-*			context size is the target pixel width of the containing element
+*		subsequent horizontal widths - margins, padding, et al in percentages (% are at least to me a more logical unit for the horiz)
+*					(% also avoid some layout quirks mentioned places like this - 
+*						http://www.456bereastreet.com/archive/201101/only_use_ems_for_the_total_width_of_em-based_layouts/ )		
+*				Sizing formula is: target (i.e. desired) size / context size.
+*				NOTE: Padding in %, context is the width of the element. Margins in %, context is width of the CONTAINING ELEMENT
 */
-html {
-  font-size: 100%;
-/* 16px (probably) */
-}
+/* global defaults */
 body {
   font-size: 0.875rem;
-/* 14/16 */
-  line-height: 1.125em;
-/* 18/16 */
+/* 14px 14 / default16px 16 */
+  line-height: 1.429em;
+/* 20/14 */
   padding: 0;
 }
 body #contentWrapper {
   margin: 16px auto;
   max-width: 94%;
-  width: 73.14em;
+  width: 73.142em;
 /* 1024/14 */
+/* title */
 }
 body #contentWrapper h1 {
+  display: inline-block;
+  font-size: 2rem;
+/* 42px 42 / default16px 16 */
+  line-height: 0.833em;
+/* 36/24 */
+  margin: 0.833em 0;
+/* V: 18/24 */
+}
+body #contentWrapper h2 {
   font-size: 1.5rem;
-/* 24/16 */
-  margin: 1.8em 0.015625%;
-/* H: 16/24 V: 16 / 1024 */
+/* 20px 20 / default16px 16 */
+  line-height: 1em;
+/* 20/20 */
+  margin: 1.111em 0;
+/* V: 20/20 */
+}
+body #contentWrapper h3 {
+  font-size: 1.17rem;
 }
 body #contentWrapper p {
-  margin: 1em 0.01171875%;
-/* 12/1024 */
+  line-height: 1.428em;
+/* 20/14 */
+  margin: 1.428em 0;
+/* V: 20/14 */
+}
+body #contentWrapper ul li {
+  list-style-type: none;
+}
+body #contentWrapper #labTitle {
+  margin-right: 39.0625%;
+}
+body #contentWrapper #labTitle .t {
+  color: #000;
+}
+body #contentWrapper #labTitle .p {
+  color: #008000;
+}
+body #contentWrapper #labTitle .l {
+  color: #00f;
+}
+body #contentWrapper #headlineDom {
+  font-style: italic;
 }

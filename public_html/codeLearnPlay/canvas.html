@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+
+<canvas id="canvas" height="600px" width="600px">
+</canvas>
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+var grid_canvas = document.getElementById("canvas");
+var grid = grid_canvas.getContext("2d");
+grid.beginPath();
+
+// Nessie
+grid.fillStyle="336600";
+
+// the head
+grid.moveTo(375,25);
+grid.quadraticCurveTo(330,25,340,50.5);
+grid.moveTo(375,25);
+grid.quadraticCurveTo(430,45,368,55.5);
+
+// neck 
+grid.quadraticCurveTo(348,85,355,120);
+grid.moveTo(340,50.5);
+grid.quadraticCurveTo(348,85,335,120);
+grid.quadraticCurveTo(340,35,375,25);
+grid.lineTo(375,120)
+grid.closePath();
+
+grid.fill();
+
+i = 50;
+while (i--) {
+	var t=setTimeout("shake()",3000);
+	
+		function shake() {
+			grid.rotate(20*Math.PI/180);
+			grid.rotate(20*Math.PI/90);
+		}
+}
+
+</script>

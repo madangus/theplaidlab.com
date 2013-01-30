@@ -34,29 +34,36 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 *	using max-width but instead tweaking the font sizes at breakpoints instead - 
 *	http://hicksdesign.co.uk/journal/finally-a-fluid-hicksdesign 
 *
-*		font size - For most browsers rems are supported. Use formula: desired size / context size - font size of the html root.
-*			IE 8, older mobile - provide an em based fallback where context size is the font size of the containing element. 
+*		Font size - For most browsers rems are supported. The fallback (first overridden measure) is for IE 8 and old, olde mobile.
+*			Use formula: desired size / font size of the html root.
 *
-*		vertical widths - margins, padding et al in ems since they are inherently tied to the font size 
-*			Use formula: Base leading is 18px for 14px body font (130% of 14). Increase/descrease font size and leading changes 
-*				proportionally in multiples of 18.		
+*
+*		Vertical widths - margins, padding et al in ems since they are inherently tied to the font size. 
+*		NOTE: Base line height is 18px for 14px body font (130% of 14). 
+*			Common formula for margin and line height: Desired line height usually the standard 18 / font size of element
+*				For h1 we double the line height, for small fonts increase line height to 18px equiv. if necessary
+*						( See: 	http://alistapart.com/article/howtosizetextincss
+*								http://alistapart.com/article/settingtypeontheweb
+*							Sure, these are older articles but the idea of a vertical baseline grid for text is an old one.	)		
 *				
-*		master horizontal width set in ems for #contentWrapper - an 'ideal' of 1024px across.
-*			Use formula: desired size / context size which is the font size of containing element.	
 *
-*		subsequent horizontal widths - margins, padding, et al in percentages (% are at least to me a more logical unit for the horiz)
-*					(% also avoid some layout quirks mentioned places like this - 
-*						http://www.456bereastreet.com/archive/201101/only_use_ems_for_the_total_width_of_em-based_layouts/ )		
+*		Master horizontal width set in ems for #contentWrapper - an 'ideal' of 1024px across.
+*			Use formula: desired size / font size of containing element.	
 *
-*				Use formula: desired size / context size.
-*				NOTE: Padding in %, context is the width of the element. Margins in %, context is width of the CONTAINING ELEMENT
+*
+*		Subsequent horizontal widths - margins, padding, et al in percentages (% are at least to me a more logical unit for the horiz).
+*				(% also avoid some layout quirks mentioned places like this - 
+*					http://www.456bereastreet.com/archive/201101/only_use_ems_for_the_total_width_of_em-based_layouts/ )		
+*
+*			Use formula: desired size / context size.
+*			NOTE: Padding in %, context size = width of the element. Margins in %, context size = width of the CONTAINING ELEMENT.
 */
 
 /* global defaults */
 
 body
 	font-size 0.875rem									/* 14px 14 / default16px 16 */
-	line-height 1.429em 								/* 18/14 */ 
+	line-height 1.286em 								/* 18/14 */ 
 	padding 0
 
 	#contentWrapper
@@ -66,22 +73,29 @@ body
 
 		h1
 			display inline-block
-			font-size: 2rem								/* 42px 42 / default16px 16 */
-			line-height: 0.833em;						/* 36/24 */
-			margin 0.833em 0							/* V: 18/24 */
+			font-size: 2.25rem							/* 36/16  */
+			line-height: 1em;							/* 36/36  */
+			margin 0.5em 0								/* V: 18/36 */
 
 		h2
-			font-size 1.5rem							/* 20px 20 / default16px 16 */
-			line-height 1em								/* 20/20 */
-			margin 1.111em 0							/* V: 20/20 */		
+			font-size 1.5rem							/* 24/16 */
+			line height 0.75em							/* 18/24 */
+			margin 0.75em 0								/* 18/24 */
 
 		h3
-			font-size 1.17rem
-			
+			font-size 1.125rem							/* 18/16 */
+			line-height 1em								/* 18/18 */
+			margin 1em 0								/* V: 18/18 */		
+
+		h4
+			font-size 1rem								/* 16/16 */
+			line-height  1.125em						/* 18/16 */
+			margin 1.125em 0							/* 18/16 */
 
 		p
-			line-height 1.428em							/* 20/14 */		
-			margin 1.428em 0							/* V: 20/14 */
+			font-size 0.875rem							/* 14 / 16 */
+			line-height 1.286em							/* 18/14 */		
+			margin 1.286em 0							/* V: 18/14 */
 
 		ul
 			li
@@ -91,7 +105,7 @@ body
 		/* title */
 
 		#labTitle
-			margin-right 39.0625% 		
+			width 30%
 
 			.t
 				color black
@@ -104,6 +118,7 @@ body
 
 		#headlineDom
 			font-style italic
-
+			text-align right
+			width 70%
 
 

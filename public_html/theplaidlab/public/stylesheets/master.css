@@ -204,7 +204,7 @@ body #contentWrapper ul {
 /* V: 18/14 */
 }
 body #contentWrapper ul li {
-  list-style-type: none;
+  list-style-type: disc;
   margin-left: 1.286%;
 /* 18/14 */
 }

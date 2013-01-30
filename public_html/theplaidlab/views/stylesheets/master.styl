@@ -41,10 +41,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 *		Vertical widths - margins, padding et al in ems since they are inherently tied to the font size. 
 *		NOTE: Base line height is 18px for 14px body font (130% of 14). 
 *			Common formula for margin and line height: Desired line height usually the standard 18 / font size of element
-*				For h1 we double the line height, for small fonts increase line height to 18px equiv. if necessary
-*						( See: 	http://alistapart.com/article/howtosizetextincss
-*								http://alistapart.com/article/settingtypeontheweb
-*							Sure, these are older articles but the idea of a vertical baseline grid for text is an old one.	)		
+*				For h1 we double the line height, for small fonts increase line height to 18px equiv. if necessary		
 *				
 *
 *		Master horizontal width set in ems for #contentWrapper - an 'ideal' of 1024px across.
@@ -74,12 +71,12 @@ body
 		h1
 			display inline-block
 			font-size: 2.25rem							/* 36/16  */
-			line-height: 1em;							/* 36/36  */
+			line-height: 1.5em;							/* 54/36  (triple line height desired for h1) */
 			margin 0.5em 0								/* V: 18/36 */
 
 		h2
 			font-size 1.5rem							/* 24/16 */
-			line height 0.75em							/* 18/24 */
+			line height 1.333em							/* 32/24 */
 			margin 0.75em 0								/* 18/24 */
 
 		h3
@@ -94,12 +91,24 @@ body
 
 		p
 			font-size 0.875rem							/* 14 / 16 */
-			line-height 1.286em							/* 18/14 */		
+			line-height 1.28571428571429em				/* 18/14 */		
 			margin 1.286em 0							/* V: 18/14 */
 
 		ul
+			line-height 1.286em							/* 18/14 */
+			margin 1.28571428571429em 0					/* V: 18/14 */
+
 			li
 				list-style-type none	
+				margin-left 1.28571428571429% 			/* 18/14 */
+
+		li>ul,
+		ul.nested
+			font-size 0.875rem
+			margin 0
+
+			li
+				margin-left 2.57142857142857%			/* 36/14 */
 
 
 		/* title */
@@ -120,5 +129,7 @@ body
 			font-style italic
 			text-align right
 			width 70%
+
+
 
 

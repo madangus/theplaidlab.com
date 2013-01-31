@@ -8,6 +8,7 @@ var express = require('express')
   , user = require('./routes/user')
   , http = require('http')
   , stylus = require('stylus')
+  , nib = require('nib')
   , path = require('path');
 
 var app = express();
@@ -22,10 +23,17 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(app.router);
 
+  function compile(str, path) {
+    return stylus(str)
+    .set('filename', path)
+    .set('compress', true)
+    .use(nib());
+  }
+
   app.use(stylus.middleware({
-    debug: true,
     src: __dirname + '/views',
-    dest: __dirname + '/public'
+    dest: __dirname + '/public',
+    compile: compile
   }));
 
   app.use(express.static(path.join(__dirname, 'public')));

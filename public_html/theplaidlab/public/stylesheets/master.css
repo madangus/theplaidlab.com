@@ -256,3 +256,7 @@ body #contentWrapper .weeBio .webDevElevator {
 body #contentWrapper .weeBio .webDevElevator dt {
   font-weight: bold;
 }
+body #contentWrapper .weeBio .webDevElevator dd {
+  padding-left: 1.286%;
+/* 18/14 */
+}

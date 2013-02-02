@@ -1,262 +1,39 @@
-/* theplaidlab.com master styles */
-/* reset 
-* 		extracted from Eric Meyer CSS reset 2.0 - http://meyerweb.com/eric/tools/css/reset/ 
-*/
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/*	The above is effectively setting the html root to 16px, the common 100%.  
-*	However, since cannot be absolutely certain 1 use em based mq breakpoints
-*/
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-/* plaidlab proper begins */
-/*
-*
-*	Responsive design is a fancy, fast changing beastie. This site uses an elastic layout to display well as screen size increases and
-*	keep a sense of proportion. The max-width constraint on the wrapper stops text becoming stupid long if size is increased.
-*	Later as I add more content, the design may go completely fluid if I come up with a nice widescreen optimized layout.
-*
-*	Of course, the max-width constraint is only one way to prevent dreaded scrollbars as text is resized. This is a good example of not 
-*	using max-width but instead tweaking the font sizes at breakpoints instead - 
-*	http://hicksdesign.co.uk/journal/finally-a-fluid-hicksdesign 
-*
-*		Font size - For most browsers rems are supported. The fallback (first overridden measure) is for IE 8 and old, olde mobile.
-*			Use formula: desired size / font size of the html root.
-*
-*
-*		Vertical widths - margins, padding et al in ems since they are inherently tied to the font size. 
-*		NOTE: Base line height is 18px for 14px body font (130% of 14). 
-*			Common formula for margin and line height: Desired line height usually the standard 18 / font size of element
-*				For h1 we double the line height, for small fonts increase line height to 18px equiv. if necessary		
-*				
-*
-*		Master horizontal width set in ems for #contentWrapper - an 'ideal' of 1024px across.
-*			Use formula: desired size / font size of containing element.	
-*
-*
-*		Subsequent horizontal widths - margins, padding, et al in percentages (% are at least to me a more logical unit for the horiz).
-*				(% also avoid some layout quirks mentioned places like this - 
-*					http://www.456bereastreet.com/archive/201101/only_use_ems_for_the_total_width_of_em-based_layouts/ )		
-*
-*			Use formula: desired size / context size.
-*			NOTE: Padding in %, context size = width of the element. Margins in %, context size = width of the CONTAINING ELEMENT.
-*/
-/* global defaults */
-body {
-  font-size: 0.875rem;
-/* 14px 14 / default16px 16 */
-  line-height: 1.286em;
-/* 18/14 */
-  padding: 0;
-}
-body #contentWrapper {
-  margin: 16px auto;
-  max-width: 94%;
-  width: 73.142em;
-/* 1024/14 */
-/* wee utility beasties */
-/* title */
-/* intro */
-}
-body #contentWrapper h1 {
-  display: inline-block;
-  font-size: 2.25rem;
-/* 36/16  */
-  line-height: 1.5em;
-/* 54/36  (triple line height desired for h1) */
-  margin: 0.5em 0;
-/* V: 18/36 */
-}
-body #contentWrapper h2 {
-  font-size: 1.5rem;
-/* 24/16 */
-  line: height 1.333em;
-/* 32/24 */
-  margin: 0.75em 0;
-/* 18/24 */
-}
-body #contentWrapper h3 {
-  font-size: 1.125rem;
-/* 18/16 */
-  line-height: 1em;
-/* 18/18 */
-  margin: 1em 0;
-/* V: 18/18 */
-}
-body #contentWrapper h4 {
-  font-size: 1rem;
-/* 16/16 */
-  line-height: 1.125em;
-/* 18/16 */
-  margin: 1.125em 0;
-/* 18/16 */
-}
-body #contentWrapper p {
-  font-size: 0.875rem;
-/* 14 / 16 */
-  line-height: 1.286em;
-/* 18/14 */
-  margin: 1.286em 0;
-/* V: 18/14 */
-}
-body #contentWrapper ul {
-  line-height: 1.286em;
-/* 18/14 */
-  margin: 1.286em 0;
-/* V: 18/14 */
-}
-body #contentWrapper ul li {
-  list-style-type: disc;
-  margin-left: 1.286%;
-/* 18/14 */
-}
-body #contentWrapper li>ul,
-body #contentWrapper ul.nested {
-  font-size: 0.875rem;
-  margin: 0;
-}
-body #contentWrapper li>ul li,
-body #contentWrapper ul.nested li {
-  margin-left: 2.571%;
-/* 36/14 */
-}
-body #contentWrapper .intro {
-  margin-bottom: 0;
-}
-body #contentWrapper .thoughts ul {
-  margin-top: 0;
-}
-body #contentWrapper #labTitle {
-  width: 30%;
-}
-body #contentWrapper #labTitle .t {
-  color: #000;
-}
-body #contentWrapper #labTitle .p {
-  color: #008000;
-}
-body #contentWrapper #labTitle .l {
-  color: #00f;
-}
-body #contentWrapper #headlineDom {
-  font-style: italic;
-  text-align: right;
-  width: 70%;
-}
-body #contentWrapper .weeBio .content {
-  width: 75.683%;
-/* 775/1024 */
-}
-body #contentWrapper .weeBio .headshot {
-  float: right;
-  margin: 0 3.515% 3.515% 3.515%;
-/* 36/1024 */
-}
-body #contentWrapper .weeBio .webDevElevator {
-  margin-top: 0;
-}
-body #contentWrapper .weeBio .webDevElevator dt {
-  font-weight: bold;
-}
-body #contentWrapper .weeBio .webDevElevator dd {
-  padding-left: 1.286%;
-/* 18/14 */
-}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+#contentWrapper{font-size:.875rem;line-height:1.286em;margin:16px auto;max-width:94%;padding:0;width:73.142em;}
+#contentWrapper h1,#contentWrapper .h1{display:inline-block;font-size:2.25rem;line-height:1.5em;margin:.5em 0;}
+#contentWrapper h2,#contentWrapper .h2{font-size:1.5rem;line:height 1.333em;margin:.75em 0;}
+#contentWrapper h3,#contentWrapper .h3{font-size:1.125rem;line-height:1em;margin:1em 0;}
+#contentWrapper h4,#contentWrapper .h4{font-size:1rem;line-height:1.125em;margin:1.125em 0;}
+#contentWrapper p,#contentWrapper .p{font-size:.875rem;line-height:1.286em;margin:1.286em 0;}
+#contentWrapper ul,#contentWrapper .ul{line-height:1.286em;margin:1.286em 0;}
+#contentWrapper ul li,#contentWrapper .ul li,#contentWrapper ul .li,#contentWrapper .ul .li{list-style-type:disc;margin-left:1.286%;}
+#contentWrapper .nestedList{font-size:.875rem;margin:0;}
+#contentWrapper .nestedList .nestedlistItem{margin-left:2.571%;}
+#contentWrapper dt,#contentWrapper .dt{font-weight:bold}
+#contentWrapper dd,#contentWrapper .dd{padding-left:1.286%;}
+.intro{margin-bottom:0}
+.thoughts .points{margin-top:0}
+#labTitle{width:30%;}
+#labTitle .the{color:#000}
+#labTitle .plaid{color:#008000}
+#labTitle .lab{color:#00f}
+#headlineDom{font-style:italic;text-align:right;width:70%}
+#weeMobileContent{display:none}
+.bio .content{width:75.683%;}
+.bio .headshot{float:right;margin:0 3.515% 3.515% 3.515%;}
+.bio .webDevElevator{margin-top:0}
+@media all and (max-width: 20em){#weeMobileContent{display:block}
+.bio,.tinkering,.stage{display:none}
+}@media all and (max-width: 33.75em){#weeMobileContent{display:block}
+.stage{display:none}
+}@media all and (max-width: 48em){#weeMobileContent{display:none}
+.bio,.tinkering,.stage{display:block}
+}*[data-module="carousel"] *[data-control="navigate"]{height:100px;width:3.571%}
+*[data-module="carousel"] *[data-control="navigate"]{display:inline-block;vertical-align:top}
+*[data-module="carousel"] *[data-control="navigate"][data-action="back"]{background-color:#00f}
+*[data-module="carousel"] *[data-control="navigate"][data-action="forward"]{background-color:#008000}
+*[data-module="carousel"] *[data-control="stage"]{display:inline-block;overflow:hidden;width:87.89%;-webkit-backface-visibility:hidden;-webkit-perspective:1000}
+*[data-module="carousel"] .itemsWrapper{-webkit-transition:.5s margin linear;-moz-transition:.5s margin linear;-o-transition:.5s margin linear;-ms-transition:.5s margin linear;transition:.5s margin linear;width:500%;}
+*[data-module="carousel"] *[data-display-item]{display:inline-block;margin:0 .444%;vertical-align:top;width:19.111%;}
+*[data-module="carousel"] *[data-control="pager"]{clear:both}

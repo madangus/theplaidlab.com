@@ -33,7 +33,8 @@ app.configure(function(){
   app.use(stylus.middleware({
     src: __dirname + '/views',
     dest: __dirname + '/public',
-    compile: compile
+    compile: compile,
+    firebug: true
   }));
 
   app.use(express.static(path.join(__dirname, 'public')));

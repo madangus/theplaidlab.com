@@ -1,3 +1,8 @@
+/* immediate imports - these may be used immediately so please keep at the top */
+
+@import "nib/vendor"
+
+
 /* theplaidlab.com master styles */
 
 /* reset 
@@ -58,109 +63,126 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* global defaults */
 
-body
+#contentWrapper
 	font-size 0.875rem									/* 14px 14 / default16px 16 */
 	line-height 1.286em 								/* 18/14 */ 
+	margin 16px auto
+	max-width 94%
 	padding 0
+	width 73.142em									/* 1024/14 */
 
-	#contentWrapper
-		margin 16px auto
-		max-width 94%
-		width 73.142em									/* 1024/14 */
+	h1,
+	.h1
+		display inline-block
+		font-size: 2.25rem							/* 36/16  */
+		line-height: 1.5em;							/* 54/36  (triple line height desired for h1) */
+		margin 0.5em 0								/* V: 18/36 */
 
-		h1
-			display inline-block
-			font-size: 2.25rem							/* 36/16  */
-			line-height: 1.5em;							/* 54/36  (triple line height desired for h1) */
-			margin 0.5em 0								/* V: 18/36 */
+	h2,
+	.h2
+		font-size 1.5rem							/* 24/16 */
+		line height 1.333em							/* 32/24 */
+		margin 0.75em 0								/* 18/24 */
 
-		h2
-			font-size 1.5rem							/* 24/16 */
-			line height 1.333em							/* 32/24 */
-			margin 0.75em 0								/* 18/24 */
+	h3,
+	.h3
+		font-size 1.125rem							/* 18/16 */
+		line-height 1em								/* 18/18 */
+		margin 1em 0								/* V: 18/18 */		
 
-		h3
-			font-size 1.125rem							/* 18/16 */
-			line-height 1em								/* 18/18 */
-			margin 1em 0								/* V: 18/18 */		
+	h4,
+	.h4
+		font-size 1rem								/* 16/16 */
+		line-height  1.125em						/* 18/16 */
+		margin 1.125em 0							/* 18/16 */
 
-		h4
-			font-size 1rem								/* 16/16 */
-			line-height  1.125em						/* 18/16 */
-			margin 1.125em 0							/* 18/16 */
+	p,
+	.p
+		font-size 0.875rem							/* 14 / 16 */
+		line-height 1.286em							/* 18/14 */		
+		margin 1.286em 0							/* V: 18/14 */
 
-		p
-			font-size 0.875rem							/* 14 / 16 */
-			line-height 1.286em							/* 18/14 */		
-			margin 1.286em 0							/* V: 18/14 */
+	ul,
+	.ul
+		line-height 1.286em							/* 18/14 */
+		margin 1.286em 0							/* V: 18/14 */
 
-		ul
-			line-height 1.286em							/* 18/14 */
-			margin 1.286em 0							/* V: 18/14 */
+		li,
+		.li
+			list-style-type disc	
+			margin-left 1.286% 						/* 18/14 */
 
-			li
-				list-style-type disc	
-				margin-left 1.286% 						/* 18/14 */
+	.nestedList
+		font-size 0.875rem
+		margin 0
 
-		li>ul,
-		ul.nested
-			font-size 0.875rem
-			margin 0
+		.nestedlistItem
+			margin-left 2.571%						/* 36/14 */
 
-			li
-				margin-left 2.571%						/* 36/14 */
+	dt,
+	.dt
+		font-weight bold
 
-
-		/* wee utility beasties */
-
-		.intro
-			margin-bottom 0
-
-		.thoughts ul
-			margin-top 0
-
-
-		/* title */
-
-		#labTitle
-			width 30%
-
-			.t
-				color black
-
-			.p
-				color green
-
-			.l
-				color blue
-
-		#headlineDom
-			font-style italic
-			text-align right
-			width 70%
-
-
-		/* intro */
-
-		.weeBio
-
-			.content
-				width 75.683%								/* 775/1024 */
-			
-			.headshot
-				float: right
-				margin 0 3.515% 3.515% 3.515%				/* 36/1024 */
-
-			.webDevElevator	
-				margin-top 0
-
-				dt
-					font-weight bold
-
-				dd
-					padding-left 1.286% 						/* 18/14 */
+	dd,
+	.dd
+		padding-left 1.286% 						/* 18/14 */
 
 
 
+/* wee utility beasties */
+
+.intro
+	margin-bottom 0
+
+.thoughts .points
+	margin-top 0
+
+
+/* title */
+
+#labTitle
+	width 30%
+
+	.the
+		color black
+
+	.plaid
+		color green
+
+	.lab
+		color blue
+
+#headlineDom
+	font-style italic
+	text-align right
+	width 70%
+
+
+/* wee mobile content */	
+#weeMobileContent
+	display none
+
+
+/* intro */
+.bio
+
+	.content
+		width 75.683%								/* 775/1024 */
+	
+	.headshot
+		float: right
+		margin 0 3.515% 3.515% 3.515%				/* 36/1024 */
+
+	.webDevElevator	
+		margin-top 0
+
+
+/* imports 
+*		Keep these at the bottom so they override the defaults
+*/
+
+@import "wee"
+@import "middle"
+@import "big"
 
 

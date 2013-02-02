@@ -49,9 +49,9 @@ block content
 
 
 		section.portfolio(data-module="carousel")
-			h2 Portfolio
-
-			div(data-control="navigate",data-action="back")			
+			h2.portfolioHeading Portfolio
+			p.mobileNav Swipe left or right to see my different projects.
+			p.desktopNav Navigate my different projects with the keyboard. f or right arrow to go forward, b or left arrow to go back.
 
 			div(data-control="stage")
 				.itemsWrapper
@@ -121,8 +121,6 @@ block content
 							li Abstracted a core set of minimal styles and moved them to the <head> of the page - usually an anti-pattern but in this case, it vastly reduced the style weight of the page and removed the overhead of an additional http request.
 							li Eliminated several rounded corner background images and such, bringing the design in line with the modern Orbitz feel.
 							li Raised the YSlow score from a C to an A, making each page load several hundred kb lighter. This adds up significantly when scaled to 160,000 requests per month.
-
-			div(data-control="navigate",data-action="forward")
 
 			div(data-control="pager")
 

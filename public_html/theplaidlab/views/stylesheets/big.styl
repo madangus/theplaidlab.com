@@ -1,32 +1,36 @@
 /* Styles for laptop/desktop */
 
 *[data-module="carousel"]
+	-webkit-backface-visibility: hidden
+	-webkit-transform: rotateY(0deg)
 
-	*[data-control="navigate"]
+	.mobileNav
+		display none
+
+	.portfolioHeading,
+	.desktopNav
 		display inline-block
-		height 450px
-		vertical-align top
-		width 3.571%
 
-	*[data-control="navigate"][data-action="back"]
-		background-color blue
-
-	*[data-control="navigate"][data-action="forward"]
-		background-color green
+	.desktopNav
+		text-align right	
+		width 81.649%							/* 836/1024 */
 
 	*[data-control="stage"]
 		display inline-block
 		overflow hidden
 		width 91.796%							/* 940/1024 */ 
-		-webkit-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden
+	-webkit-transform: rotateY(0deg)
 
 	.itemsWrapper
 		transition 0.5s all linear		
 		width 500%								/* 4700/940 (Desired size is number of items * length of each item including margin) */
-		-webkit-transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: rotateY(0deg);
 
 	*[data-display-item]
 		display inline-block
+		height 450px
 		margin 0 0.425%							/* 20/4700 */
 		position relative
 		vertical-align top

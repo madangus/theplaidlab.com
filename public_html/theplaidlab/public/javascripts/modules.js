@@ -18,12 +18,24 @@ thePlaidLabModules.carousel = {
 		this.registerHandlers();
 	},
 	registerHandlers: function() {
-		$('*[data-module="carousel"]').on('click', '*[data-control="navigate"]', function(event) {
-			var dir = $(this).attr("data-action");
-			if (dir) {
-				thePlaidLabModules.carousel.moveStage(dir);
+		$(document.documentElement).keyup(function (event) {
+			// If there were form elements on the page we would be more careful about this
+			if (event.keyCode === 37 || event.keyCode === 66) {
+				thePlaidLabModules.carousel.moveStage('back');
+			} else if (event.keyCode === 39 || event.keyCode === 70) {
+				thePlaidLabModules.carousel.moveStage('forward');			
 			}
 		});
+
+		// In case I decide to add some graphical nav elements back
+		if ( $('*[data-module="carousel"] *[data-control="navigate"]').length ) {
+			$('*[data-module="carousel"]').on('click', '*[data-control="navigate"]', function(event) {
+				var dir = $(this).attr("data-action");
+				if (dir) {
+					thePlaidLabModules.carousel.moveStage(dir);
+				}
+			});
+		}		
 	},
 	moveStage: function(dir) {
 		var newPosPx, newPos;

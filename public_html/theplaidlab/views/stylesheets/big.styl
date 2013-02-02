@@ -3,12 +3,10 @@
 *[data-module="carousel"]
 
 	*[data-control="navigate"]
-		height 100px
-		width 3.571%
-
-	*[data-control="navigate"]
 		display inline-block
+		height 450px
 		vertical-align top
+		width 3.571%
 
 	*[data-control="navigate"][data-action="back"]
 		background-color blue
@@ -19,20 +17,20 @@
 	*[data-control="stage"]
 		display inline-block
 		overflow hidden
-		width 87.890%							/* 900/1024 */ 
-		/* iOS flicker fix */
-		-webkit-backface-visibility: hidden
-		-webkit-perspective:1000
+		width 91.796%							/* 940/1024 */ 
+		-webkit-backface-visibility: hidden;
 
 	.itemsWrapper
-		transition 0.5s margin linear		
-		width 500%								/* 4500/900 (Desired size is number of items * length of each item including margin) */
+		transition 0.5s all linear		
+		width 500%								/* 4700/940 (Desired size is number of items * length of each item including margin) */
+		-webkit-transform: translateZ(0);
 
 	*[data-display-item]
 		display inline-block
-		margin 0 0.444%							/* 20/4500 */
+		margin 0 0.425%							/* 20/4700 */
+		position relative
 		vertical-align top
-		width 19.111%							/* 860/4500 (900 - 20 either side for breathing room) */
+		width 19.148%							/* 900/4700  */		
 
 	*[data-control="pager"]
 		clear both

@@ -30,11 +30,11 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{di
 *[data-module="carousel"] .portfolioHeading,*[data-module="carousel"] .mobileNav{display:inline-block}
 }@media all and (max-width: 48em){#weeMobileContent{display:none}
 .bio,.tinkering,.stage{display:block}
-}*[data-module="carousel"]{-webkit-backface-visibility:hidden;-webkit-transform:rotateY(0);-webkit-backface-visibility:hidden;-webkit-transform:rotateY(0);-webkit-backface-visibility:hidden;-webkit-transform:rotateY(0);}
-*[data-module="carousel"] .mobileNav{display:none}
-*[data-module="carousel"] .portfolioHeading,*[data-module="carousel"] .desktopNav{display:inline-block}
-*[data-module="carousel"] .desktopNav{text-align:right;width:81.649%;}
-*[data-module="carousel"] *[data-control="stage"]{display:inline-block;overflow:hidden;width:91.796%;}
-*[data-module="carousel"] .itemsWrapper{-webkit-transition:.5s all linear;-moz-transition:.5s all linear;-o-transition:.5s all linear;-ms-transition:.5s all linear;transition:.5s all linear;width:500%;}
-*[data-module="carousel"] *[data-display-item]{display:inline-block;height:450px;margin:0 .425%;position:relative;vertical-align:top;width:19.148%;}
-*[data-module="carousel"] *[data-control="pager"]{clear:both}
+}*[data-module="slideshow"]{-webkit-backface-visibility:hidden;-webkit-transform:rotateY(0);-webkit-backface-visibility:hidden;-webkit-transform:rotateY(0);-webkit-backface-visibility:hidden;-webkit-transform:rotateY(0);}
+*[data-module="slideshow"] .mobileNav{display:none}
+*[data-module="slideshow"] .portfolioHeading,*[data-module="slideshow"] .desktopNav{display:inline-block}
+*[data-module="slideshow"] .desktopNav{text-align:right;width:81.649%;}
+*[data-module="slideshow"] *[data-control="stage"]{display:inline-block;overflow:hidden;width:91.796%;}
+*[data-module="slideshow"] .itemsWrapper{-webkit-transition:.5s all linear;-moz-transition:.5s all linear;-o-transition:.5s all linear;-ms-transition:.5s all linear;transition:.5s all linear;width:500%;}
+*[data-module="slideshow"] *[data-display-item]{display:inline-block;height:450px;margin:0 .425%;position:relative;vertical-align:top;width:19.148%;}
+*[data-module="slideshow"] *[data-control="pager"]{clear:both}

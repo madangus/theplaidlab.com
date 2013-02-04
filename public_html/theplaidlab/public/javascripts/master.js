@@ -21,7 +21,7 @@ var thePlaidLab = (function() {
 			console.log('theplaidlab init');
 			debugBreakpoints();
 			registerHandlers();
-			thePlaidLabModules.carousel.init();
+			thePlaidLabModules.slideshow.init();
 		}
 	};
 }());

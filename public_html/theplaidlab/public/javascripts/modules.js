@@ -16,6 +16,7 @@ thePlaidLabModules.slideshow = {
 		this.currentItem = 1;
 		this.stagePos = 0;
 		this.registerHandlers();
+		this.setupTouchSupport();
 	},
 	registerHandlers: function() {
 		$(document.documentElement).keyup(function (event) {
@@ -36,93 +37,127 @@ thePlaidLabModules.slideshow = {
 				}
 			});
 		}
+	},
+	setupTouchSupport: function() {
+		if (typeof document.querySelector === 'function') {
+			var target = document.querySelector('*[data-module="slideshow"]');
+			this.activeGesture = null;
+			this.movesx = [];
+			this.movesy = [];
+			target.addEventListener('touchstart', thePlaidLabModules.slideshow.handleTouch, false); 
+			target.addEventListener('touchmove', thePlaidLabModules.slideshow.handleTouch, false); 		
+			target.addEventListener('touchcancel', thePlaidLabModules.slideshow.handleTouch, false); 		
+			target.addEventListener('touchend', thePlaidLabModules.slideshow.handleTouch, false); 
+		} 
+	},	
+	handleTouch: function() {
+		var activeGesture = thePlaidLabModules.slideshow.activeGesture;
+		var movesx = thePlaidLabModules.slideshow.movesx;
+		var movesy = thePlaidLabModules.slideshow.movesy;
 
-		var target = document.querySelector('*[data-module="slideshow"]');
-		var activeGesture = false;
-		var movesx = [];
-		var movesy = [];		
-		target.addEventListener('touchstart', handleTouch, false); 
-		target.addEventListener('touchmove', handleTouch, false); 		
-		target.addEventListener('touchcancel', handleTouch, false); 		
-		target.addEventListener('touchend', handleTouch, false); 		
+		console.log('handleTouch fires!');
+
+		var touch = event.touches[0];
+		var numTouches = event.touches.length;			
+		if (touch) {
+			var x = touch.screenX;
+			var y = touch.screenY;	
+		}
+
+		if (event.type === 'touchstart' && numTouches === 1 && !activeGesture) {
+			// Explicitly set the active flag, since it's a primitive type and our make-life-easier local assignment made a *copy* not reference
+			thePlaidLabModules.slideshow.activeGesture = true;
+			// Since it's an array we are dealing with here, the local assignment is just a reference so don't have to worry about
+			// explcitly setting the object level original. Same treatment in touchmove etc...  
+			movesx[0] = x;
+			movesy[0] = y;
+			console.log('touchstart x,y ' + x + ' ' + y);
+			console.log('in the move array we have ' + movesx.length);
+		}
 		
-		function handleTouch(event) {
-			console.log('handleTouch fires!');
-			var touch = event.touches[0];
-			var numTouches = event.touches.length;			
-			if (touch) {
-				var x = touch.screenX;
-				var y = touch.screenY;	
-			}
-
-			if (event.type === 'touchstart' && numTouches === 1 && !activeGesture) {
-				// Set this flag so we track all subsequent movements
-				activeGesture = true;
-				movesx[0] = x;
-				movesy[0] = y;
-				console.log('touchstart x,y ' + x + ' ' + y);
-				console.log('in the move array we have ' + movesx.length);
-			}
-			
-			if (event.type === 'touchmove') {
-				// This prevents touchcancel firing prematurely which seemed to be especially frquent on android 4 chrome
+		if (event.type === 'touchmove') {
+			if (numTouches === 1 && activeGesture) {
+				// This prevents touchcancel firing prematurely which seemed to be especially frequent on android 4 chrome
 				event.preventDefault();
-				
+
 				var moveCount = (movesx) ? (movesx.length - 1) : 0;
-				console.log('moveCount ' + moveCount);
+				console.log('activeGesture is : ' + activeGesture + '. moveCount ' + moveCount + ' movesx.length ' + movesx.length);
 				var prevx = movesx[moveCount];
 				var prevy = movesy[moveCount];							
 
-				var diff = prevy - y;
-
-				if (diff < 40 && numTouches === 1) {
-					// ok, so we still seem to be fairly horizontal so add this to the moves array
-					console.log('touchmove x,y ' + x + ' ' + y + '. diff is ' + diff);
-					movesx.push(x);
-					movesy.push(y);
-				} else {
-					// Must be a up or down swipe I guess, or some other gesture if there's more than 1 simple swiping finger. 
-					// So we cleanup and allow any other default behavior happen
-					cleanupHandleGesture();
-				}
-
-			}
-
-			if (event.type === 'touchend') {
-				// Was it a left or right swipe?
-				var lastCount = (movesx.length - 1);
-				var lastx = movesx[lastCount];
-				console.log(movesx);
-				console.log('touchend. lastCount is ' + lastCount + '. ' + 'lastx is ' + lastx);
-
-				if ( lastx > movesx[0] ) {
-					thePlaidLabModules.slideshow.moveStage('forward');			
-				} else if ( lastx < movesx[0] ) {
-					thePlaidLabModules.slideshow.moveStage('backward');			
-				}
+				console.log('touchmove x,y ' + x + ' ' + y);
+				movesx.push(x);
+				movesy.push(y);
+				thePlaidLabModules.slideshow.activeGesture = true;
+			} else {
 				cleanupHandleGesture();
 			}
-
-			if (event.type === 'touchcancel') {
-				cleanupHandleGesture();
-			}
-
-			function cleanupHandleGesture() {
-				activeGesture = false;
-				var movesx, movesy = null;				
-			}
-
-			var debug = false;
-			if (debug) {
-				var numTargetTouches = event.targetTouches.length;
-				var numChangedTouches = event.changedTouches.length;
-				$('#touchDebug').append('<br />***<span>numTouch ' + numTouch + '. numTargetTouches ' + numTargetTouches + '. numChangedTouches ' + numChangedTouches + '</span>');
-				$('#touchDebug').append('<br /><span>event type = ' + event.type + ' is event.<br />');								
-				$('#touchDebug').append('<span>event type = ' + event.type + '. touch start - x: ' + x + ' y: ' + y + '.</span>');
-			}
-
 		}
 
+		if (event.type === 'touchend' && activeGesture) {
+			// Was it a left or right swipe?
+			var lastCount = (movesx.length - 1);
+			var lastx = movesx[lastCount];
+			var lasty = movesy[lastCount];
+			console.log(movesx);
+			console.log(movesy);			
+			console.log('touchend. lastCount is ' + lastCount + '. ' + 'lastx is ' + lastx);
+
+			// Since we prevented the default behavior for touchmove earlier
+			// we need to either implement the left/right swipe OR handle up/down swipes
+
+			var swipeType;
+			if ( (lastx - movesx[0]) > 75 ) {
+				swipeType = 'right';
+			} else if ( (movesx[0] - lastx) > 75 ) {
+				swipeType = 'left';
+			} else if ( (movesy[0] - lasty) > 75 ) {
+				swipeType = 'down';
+			} else if (lasty - movesy[0] > 75) {
+				swipeType = 'up';
+			}
+			
+			switch (swipeType) {
+				case 'right':
+					thePlaidLabModules.slideshow.moveStage('forward');			
+					break;
+
+				case 'left':
+					thePlaidLabModules.slideshow.moveStage('backward');			
+					break;
+
+				case 'down':
+					console.log('down');
+					break;
+
+				case 'up':
+					console.log('up');
+					break;	
+
+			}
+
+
+			cleanupHandleGesture();
+		}
+
+		if (event.type === 'touchcancel') {
+			cleanupHandleGesture();
+		}
+
+		function cleanupHandleGesture() {
+			thePlaidLabModules.slideshow.activeGesture = false;
+			thePlaidLabModules.slideshow.movesx = [];
+			thePlaidLabModules.slideshow.movesy = [];				
+		}
+
+		var debug = false;
+		if (debug) {
+			var numTargetTouches = event.targetTouches.length;
+			var numChangedTouches = event.changedTouches.length;
+			$('#touchDebug').append('<br />***<span>numTouch ' + numTouch + '. numTargetTouches ' + numTargetTouches + '. numChangedTouches ' + numChangedTouches + '</span>');
+			$('#touchDebug').append('<br /><span>event type = ' + event.type + ' is event.<br />');								
+			$('#touchDebug').append('<span>event type = ' + event.type + '. touch start - x: ' + x + ' y: ' + y + '.</span>');
+		}
 
 	},
 	moveStage: function(dir) {
@@ -140,7 +175,7 @@ thePlaidLabModules.slideshow = {
 		if (prevItem !== this.currentItem) {
 			if (this.currentItem === 1) {
 				newPos = 0;				
-				newPosPx = "0px"
+				newPosPx = '0px';
 			} else {
 				newPos = (dir === 'backward') ? this.stagePos - this.stageWidth : this.stagePos + this.stageWidth;
 				newPosPx = '-' + newPos + 'px';

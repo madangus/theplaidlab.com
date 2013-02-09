@@ -41,9 +41,12 @@ thePlaidLabModules.slideshow = {
 	setupTouchSupport: function() {
 		if (typeof document.querySelector === 'function') {
 			var target = document.querySelector('*[data-module="slideshow"]');
+			
+			// Set these working vars here so they retain values on multiple handleTouch invocations
 			this.activeGesture = null;
 			this.movesx = [];
 			this.movesy = [];
+			
 			target.addEventListener('touchstart', thePlaidLabModules.slideshow.handleTouch, false); 
 			target.addEventListener('touchmove', thePlaidLabModules.slideshow.handleTouch, false); 		
 			target.addEventListener('touchcancel', thePlaidLabModules.slideshow.handleTouch, false); 		
@@ -51,11 +54,12 @@ thePlaidLabModules.slideshow = {
 		} 
 	},	
 	handleTouch: function() {
+		var horizontalSwipeMinimum = 50;
+		var verticalSwipeMinimum = 50;
 		var activeGesture = thePlaidLabModules.slideshow.activeGesture;
 		var movesx = thePlaidLabModules.slideshow.movesx;
 		var movesy = thePlaidLabModules.slideshow.movesy;
-
-		console.log('handleTouch fires!');
+		console.log('handleTouch fires! event.type is ' + event.type);
 
 		var touch = event.touches[0];
 		var numTouches = event.touches.length;			
@@ -71,52 +75,47 @@ thePlaidLabModules.slideshow = {
 			// explcitly setting the object level original. Same treatment in touchmove etc...  
 			movesx[0] = x;
 			movesy[0] = y;
-			console.log('touchstart x,y ' + x + ' ' + y);
-			console.log('in the move array we have ' + movesx.length);
 		}
 		
 		if (event.type === 'touchmove') {
 			if (numTouches === 1 && activeGesture) {
-				// This prevents touchcancel firing prematurely which seemed to be especially frequent on android 4 chrome
-				event.preventDefault();
+				if (Math.abs(movesy[0] - y) > verticalSwipeMinimum) {
+					console.log('swiping up or down exiting');
+					thePlaidLabModules.slideshow.activeGesture = false;
+				} else {
+					var moveCount = (movesx) ? (movesx.length - 1) : 0;			
+					var prevx = movesx[moveCount];
+					var prevy = movesy[moveCount];												
+					movesx.push(x);
+					movesy.push(y);
+					thePlaidLabModules.slideshow.activeGesture = true;
 
-				var moveCount = (movesx) ? (movesx.length - 1) : 0;
-				console.log('activeGesture is : ' + activeGesture + '. moveCount ' + moveCount + ' movesx.length ' + movesx.length);
-				var prevx = movesx[moveCount];
-				var prevy = movesy[moveCount];							
+					if ( navigator.userAgent.match(/Android/i) ) { 
+						// for mobile chrome
+						event.preventDefault();
+					}
 
-				console.log('touchmove x,y ' + x + ' ' + y);
-				movesx.push(x);
-				movesy.push(y);
-				thePlaidLabModules.slideshow.activeGesture = true;
+				}
 			} else {
 				cleanupHandleGesture();
 			}
 		}
 
 		if (event.type === 'touchend' && activeGesture) {
-			// Was it a left or right swipe?
-			var lastCount = (movesx.length - 1);
-			var lastx = movesx[lastCount];
-			var lasty = movesy[lastCount];
-			console.log(movesx);
-			console.log(movesy);			
-			console.log('touchend. lastCount is ' + lastCount + '. ' + 'lastx is ' + lastx);
+			var endMove = (movesx.length - 1);
+			var endx = movesx[endMove];
+			var endy = movesy[endMove];
 
-			// Since we prevented the default behavior for touchmove earlier
-			// we need to either implement the left/right swipe OR handle up/down swipes
+			var swipeType = (endx - movesx[0]) > horizontalSwipeMinimum ? 'right' : 'left';
 
-			var swipeType;
-			if ( (lastx - movesx[0]) > 75 ) {
-				swipeType = 'right';
-			} else if ( (movesx[0] - lastx) > 75 ) {
-				swipeType = 'left';
-			} else if ( (movesy[0] - lasty) > 75 ) {
+			/*
+			else if ( (endy - movesy[0]) > 50 ) {
 				swipeType = 'down';
-			} else if (lasty - movesy[0] > 75) {
+			} else if ( (movesy[0] - endy) > 50) {
 				swipeType = 'up';
 			}
-			
+			*/
+
 			switch (swipeType) {
 				case 'right':
 					thePlaidLabModules.slideshow.moveStage('forward');			
@@ -127,15 +126,19 @@ thePlaidLabModules.slideshow = {
 					break;
 
 				case 'down':
-					console.log('down');
+					var swipeLength = Math.abs(endy - movesy[0]);
+					console.log('down by ' + swipeLength);
+					var scrolly = -(swipeLength);
+					window.scrollBy(movesx[0], scrolly);
 					break;
 
 				case 'up':
-					console.log('up');
+					var swipeLength = Math.abs(movesy[0] - endy);
+					var scrolly = swipeLength;
+					console.log('up by ' + swipeLength + '. scrolly is ' + scrolly);
+					window.scrollBy(movesx[0], scrolly);
 					break;	
-
 			}
-
 
 			cleanupHandleGesture();
 		}
@@ -161,7 +164,7 @@ thePlaidLabModules.slideshow = {
 
 	},
 	moveStage: function(dir) {
-		var newPosPx, newPos;
+		var scrollyPx, scrolly;
 		var prevItem = this.currentItem;
 
 		if (dir === 'backward') {
@@ -174,17 +177,17 @@ thePlaidLabModules.slideshow = {
 
 		if (prevItem !== this.currentItem) {
 			if (this.currentItem === 1) {
-				newPos = 0;				
-				newPosPx = '0px';
+				scrolly = 0;				
+				scrollyPx = '0px';
 			} else {
-				newPos = (dir === 'backward') ? this.stagePos - this.stageWidth : this.stagePos + this.stageWidth;
-				newPosPx = '-' + newPos + 'px';
+				scrolly = (dir === 'backward') ? this.stagePos - this.stageWidth : this.stagePos + this.stageWidth;
+				scrollyPx = '-' + scrolly + 'px';
 			}
 
-			console.log(dir + ' to ' + newPosPx);
+			console.log(dir + ' to ' + scrollyPx);
 			var $wrapper = $('*[data-control="stage"]').find('.itemsWrapper').first(); 
-			$wrapper.css("margin-left",newPosPx);
-			this.stagePos = newPos;
+			$wrapper.css("margin-left",scrollyPx);
+			this.stagePos = scrolly;
 		}
 	}
 

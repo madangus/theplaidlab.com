@@ -43,7 +43,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 *			Use formula: desired size / font size of the html root.
 *
 *
-*		Vertical widths - margins, padding et al in ems since they are inherently tied to the font size. 
+*		Vertical widths - Margins, padding in ems since they are inherently tied to the font size. 
+*						  Line height in the proportional unitless measure, to stop crazy compounding cascade shenanigans.
 *		NOTE: Base line height is 18px for 14px body font (130% of 14). 
 *			Common formula for margin and line height: Desired line height usually the standard 18 / font size of element
 *				For h1 we double the line height, for small fonts increase line height to 18px equiv. if necessary		
@@ -64,22 +65,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* global defaults */
 
 #contentWrapper
-	font-size 0.875rem									/* 14px 14 / default16px 16 */
-	line-height 1.286em 								/* 18/14 */ 
+	font-family "myriad-pro","Arial",sans-serif
+	font-size 0.875rem												/* 14px 14 / default16px 16 */
+	line-height 1.286em 											/* 18/14 */ 
 	margin 16px auto
 	max-width 94%
 	padding 0
-	width 73.142em									/* 1024/14 */
+	width 73.142em													/* 1024/14 */
 
 	h1,
 	.h1
 		display inline-block
-		font-size: 2.25rem							/* 36/16  */
-		line-height: 1.5em;							/* 54/36  (triple line height desired for h1) */
-		margin 0.5em 0								/* V: 18/36 */
+		font-family "ff-cocon-web-pro","Helvetica",sans-serif
+		font-size: 2.25rem											/* 36/16  */
+		line-height: 1.5em;											/* 54/36  (triple line height desired for h1) */
+		margin 0.5em 0												/* V: 18/36 */
 
 	h2,
 	.h2
+		font-family ff-cocon-web-pro
 		font-size 1.5rem							/* 24/16 */
 		line height 1.333em							/* 32/24 */
 		margin 0.75em 0								/* 18/24 */

@@ -19,7 +19,7 @@ var thePlaidLab = (function() {
 	return {
 		init: function() {
 			console.log('theplaidlab init');
-			debugBreakpoints();
+			//debugBreakpoints();
 			registerHandlers();
 			thePlaidLabModules.slideshow.init();
 		}

@@ -79,42 +79,48 @@ thePlaidLabModules.slideshow = {
 		
 		if (event.type === 'touchmove') {
 			if (numTouches === 1 && activeGesture) {
-				if (Math.abs(movesy[0] - y) > verticalSwipeMinimum) {
+				if ( Math.abs(movesy[0] - y) > verticalSwipeMinimum || Math.abs(y - movesy[0]) > verticalSwipeMinimum ) {
 					console.log('swiping up or down exiting');
 					thePlaidLabModules.slideshow.activeGesture = false;
 				} else {
+					movesx.push(x);
+					movesy.push(y);					
 					var moveCount = (movesx) ? (movesx.length - 1) : 0;			
 					var prevx = movesx[moveCount];
 					var prevy = movesy[moveCount];												
-					movesx.push(x);
-					movesy.push(y);
 					thePlaidLabModules.slideshow.activeGesture = true;
 
-					if ( navigator.userAgent.match(/Android/i) ) { 
-						// for mobile chrome
+					/*
+					*	Nasty little hack follows:
+					*	This is because of the following bug - http://code.google.com/p/android/issues/detail?id=19827
+					*	There are a few options here...
+					*	(a) Try and reproduce vertical scrolling with js - from my initial look it's very hard to reproduce the native bouncey
+					*		momentum type scrolling though - so that's out
+					*	(b) Just use a graphical click left/right - if this was a high volume commercial site I would probably do this
+					*	(c) Browser sniff and show graphical left/right click targets just for android chrome 18
+					*
+					*	So this is awful, however, calling preventDefault breaks the experience on iOS leaving us to
+					*	sniff, reproduce vertical scrolling or go with graphical clickers. Ugghhhh.
+					*
+					*/
+
+					if ( navigator.userAgent.match(/Android/i) && navigator.userAgent.match(/Chrome\/18/i) ) { 
+						// for mobile chrome to get around http://code.google.com/p/android/issues/detail?id=19827
+						// Note, while the stock android browser does not suffer from this bug, the hack below does not break it. 
 						event.preventDefault();
 					}
 
 				}
 			} else {
-				cleanupHandleGesture();
+				cleanup();
 			}
 		}
 
 		if (event.type === 'touchend' && activeGesture) {
 			var endMove = (movesx.length - 1);
 			var endx = movesx[endMove];
-			var endy = movesy[endMove];
 
 			var swipeType = (endx - movesx[0]) > horizontalSwipeMinimum ? 'right' : 'left';
-
-			/*
-			else if ( (endy - movesy[0]) > 50 ) {
-				swipeType = 'down';
-			} else if ( (movesy[0] - endy) > 50) {
-				swipeType = 'up';
-			}
-			*/
 
 			switch (swipeType) {
 				case 'right':
@@ -125,29 +131,16 @@ thePlaidLabModules.slideshow = {
 					thePlaidLabModules.slideshow.moveStage('backward');			
 					break;
 
-				case 'down':
-					var swipeLength = Math.abs(endy - movesy[0]);
-					console.log('down by ' + swipeLength);
-					var scrolly = -(swipeLength);
-					window.scrollBy(movesx[0], scrolly);
-					break;
-
-				case 'up':
-					var swipeLength = Math.abs(movesy[0] - endy);
-					var scrolly = swipeLength;
-					console.log('up by ' + swipeLength + '. scrolly is ' + scrolly);
-					window.scrollBy(movesx[0], scrolly);
-					break;	
 			}
 
-			cleanupHandleGesture();
+			cleanup();
 		}
 
 		if (event.type === 'touchcancel') {
-			cleanupHandleGesture();
+			cleanup();
 		}
 
-		function cleanupHandleGesture() {
+		function cleanup() {
 			thePlaidLabModules.slideshow.activeGesture = false;
 			thePlaidLabModules.slideshow.movesx = [];
 			thePlaidLabModules.slideshow.movesy = [];				

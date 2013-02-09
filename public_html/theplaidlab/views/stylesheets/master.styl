@@ -23,7 +23,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 */
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section 
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section 
 	display block
 
 
@@ -44,15 +44,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 *
 *
 *		Vertical widths - Margins, padding in ems since they are inherently tied to the font size. 
-*						  Line height in the proportional unitless measure, to stop crazy compounding cascade shenanigans.
-*		NOTE: Base line height is 18px for 14px body font (130% of 14). 
-*			Common formula for margin and line height: Desired line height usually the standard 18 / font size of element
-*				For h1 we double the line height, for small fonts increase line height to 18px equiv. if necessary		
-*				
+*						  Line height in the proportional unitless measure, to stop crazy compounding cascade shenanigans.*				
 *
 *		Master horizontal width set in ems for #contentWrapper - an 'ideal' of 1024px across.
 *			Use formula: desired size / font size of containing element.	
-*
 *
 *		Subsequent horizontal widths - margins, padding, et al in percentages (% are at least to me a more logical unit for the horiz).
 *				(% also avoid some layout quirks mentioned places like this - 
@@ -60,38 +55,45 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 *
 *			Use formula: desired size / context size.
 *			NOTE: Padding in %, context size = width of the element. Margins in %, context size = width of the CONTAINING ELEMENT.
+*
+*	MOST IMPORTANTLY
+*		This design is using the modular scale technique described here - http://alistapart.com/article/more-meaningful-typography
+*		The 'scale' can be found in the css/modularScale.txt or http://modularscale.com/scale/?px1=16&px2=1024&ra1=1.618&ra2=0
+*		Essentially I picked the px sizes I wanted from the scale and then used the formulas above to implement them
 */
+
 
 /* global defaults */
 
-#contentWrapper
+main
 	font-family "myriad-pro","Arial",sans-serif
-	font-size 0.875rem												/* 14px 14 / default16px 16 */
-	line-height 1.286em 											/* 18/14 */ 
+	font-size 1rem													/* 16px */
+	line-height 1.5 												/* 150% */ 
 	margin 16px auto
 	max-width 94%
 	padding 0
 	width 73.142em													/* 1024/14 */
 
+
 	h1,
 	.h1
 		display inline-block
 		font-family "ff-cocon-web-pro","Helvetica",sans-serif
-		font-size: 2.25rem											/* 36/16  */
-		line-height: 1.5em;											/* 54/36  (triple line height desired for h1) */
-		margin 0.5em 0												/* V: 18/36 */
+		font-size: 5rem												/* 80/16  */
+		line-height: 2;											
+		margin 0.2em 0												/* V: 18/9 */
 
 	h2,
 	.h2
 		font-family ff-cocon-web-pro
-		font-size 1.5rem							/* 24/16 */
-		line height 1.333em							/* 32/24 */
+		font-size 2rem								/* 32/16 */
+		line height 1.5		
 		margin 0.75em 0								/* 18/24 */
 
 	h3,
 	.h3
 		font-size 1.125rem							/* 18/16 */
-		line-height 1em								/* 18/18 */
+		line-height 1.4								/* 18/18 */
 		margin 1em 0								/* V: 18/18 */		
 
 	h4,
@@ -102,13 +104,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 	p,
 	.p
-		font-size 0.875rem							/* 14 / 16 */
-		line-height 1.286em							/* 18/14 */		
+		font-size 1rem								
+		line-height 1.5			
 		margin 1.286em 0							/* V: 18/14 */
 
 	ul,
 	.ul
-		line-height 1.286em							/* 18/14 */
+		line-height 1.3
 		margin 1.286em 0							/* V: 18/14 */
 
 		li,
@@ -145,7 +147,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* title */
 
 #labTitle
-	width 30%
+	width 80%
 
 	.the
 		color black
@@ -156,11 +158,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 	.lab
 		color blue
 
-#headlineDom
-	font-style italic
-	text-align right
-	width 70%
-
 
 /* wee mobile content */	
 #weeMobileContent
@@ -168,17 +165,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 
 /* intro */
-.bio
-
-	.content
-		width 75.683%								/* 775/1024 */
+.contentColumn
+	display inline-block
+	width 45.359%								/* 464.486/1024 */
 	
-	.headshot
-		float: right
-		margin 0 3.515% 3.515% 3.515%				/* 36/1024 */
+.contentCallout
 
 	.webDevElevator	
 		margin-top 0
+
+
+
+
 
 
 /* imports 

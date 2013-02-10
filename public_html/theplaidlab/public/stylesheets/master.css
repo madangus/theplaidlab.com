@@ -1,12 +1,13 @@
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}
+body{background-color:#eee}
 main{font-family:"myriad-pro","Arial",sans-serif;font-size:1rem;line-height:1.5;margin:16px auto;max-width:94%;padding:0;width:64em;}
-main h1,main .h1{display:inline-block;font-family:"ff-cocon-web-pro","Helvetica",sans-serif;font-size:5rem;line-height:1.5;margin:.2em 0;}
-main h2,main .h2{font-family:ff-cocon-web-pro;font-size:2rem;line:height 1;margin:0 0 .681em 0;}
+main h1,main .h1{display:inline-block;font-family:"ff-cocon-web-pro","Helvetica",sans-serif;font-size:5rem;line-height:1.5;margin:.446em 0;}
+main h2,main .h2{font-family:ff-cocon-web-pro;font-size:2rem;line:height 1;margin:0 0 .809em 0;}
 main h3,main .h3{font-size:1.125rem;line-height:1;margin:1em 0;}
 main h4,main .h4{font-size:1rem;margin:1.125em 0;}
-main p,main .p{font-size:1rem;line-height:1.5;margin:0 0;}
-main ul,main .ul{margin:1.286em 0;}
+main p,main .p{font-size:1rem;line-height:1.5;margin:0 0 1.362em 0;}
+main ul,main .ul{margin:1.362em 0 1.362em 0;}
 main ul li,main .ul li,main ul .li,main .ul .li{list-style-type:disc;margin-left:1.286%;}
 main .nestedList{font-size:.875rem;margin:0;}
 main .nestedList .nestedlistItem{margin-left:2.571%;}
@@ -22,7 +23,7 @@ main h1,main h2,main h3,main .leader{text-rendering:optimizeLegibility}
 #weeMobileContent{display:none}
 .contentColumn,.contentCallout{display:inline-block;vertical-align:top}
 .contentColumn{margin-right:6.614%;width:45.359%;}
-.contentColumn .leader{font-size:1.187rem;line-height:1.5}
+.contentColumn .leader{font-size:1.187rem;line-height:1.5;margin:0 0 1.362em 0;}
 .contentCallout{width:38.198%;}
 .contentCallout .webDevElevator{margin-top:0}
 @media all and (max-width: 20em){#weeMobileContent{display:block}

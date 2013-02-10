@@ -3,8 +3,6 @@
 @import "nib/vendor"
 
 
-/* theplaidlab.com master styles */
-
 /* reset 
 * 		extracted from Eric Meyer CSS reset 2.0 - http://meyerweb.com/eric/tools/css/reset/ 
 */
@@ -72,7 +70,7 @@ main
 	margin 16px auto
 	max-width 94%
 	padding 0
-	width 73.142em													/* 1024/14 */
+	width 64em														/* 1024/16 */
 
 
 	h1,
@@ -81,7 +79,7 @@ main
 		font-family "ff-cocon-web-pro","Helvetica",sans-serif
 		font-size: 5rem												/* 80/16  */
 		line-height: 2;											
-		margin 0.2em 0												/* V: 18/9 */
+		margin 0.2em 0												/* V: 16/9 */
 
 	h2,
 	.h2
@@ -93,7 +91,7 @@ main
 	h3,
 	.h3
 		font-size 1.125rem							/* 18/16 */
-		line-height 1.4								/* 18/18 */
+		line-height 1.4								
 		margin 1em 0								/* V: 18/18 */		
 
 	h4,
@@ -165,11 +163,17 @@ main
 
 
 /* intro */
-.contentColumn
+.contentColumn,
+.contentCallout
 	display inline-block
+	vertical-align top
+
+.contentColumn
 	width 45.359%								/* 464.486/1024 */
 	
 .contentCallout
+	width 38.198%								/* 391.150/1024 */
+
 
 	.webDevElevator	
 		margin-top 0

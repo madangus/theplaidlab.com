@@ -41,10 +41,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 *			Use formula: desired size / font size of the html root.
 *
 *
-*		Vertical widths - Margins, padding in ems since they are inherently tied to the font size. 
-*						  Line height in the proportional unitless measure, to stop crazy compounding cascade shenanigans.*				
+*		Vertical widths - Margins, padding in ems since they are inherently tied to the font size.
+*								Use formula: desired size / font size of element 
+*						  Line height in the proportional unitless measure, to stop crazy compounding cascade shenanigans. 				
+*								Use formula: unit is <x> * element font size -- for example, 1.5 * 16 for our paragraphs gives 24
+*							 		(I mostly eyeballed it and used trial and error to get the final numbers, generally around font size + 8)
+*							 		 Great article here (I just found this out!) http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/
 *
-*		Master horizontal width set in ems for #contentWrapper - an 'ideal' of 1024px across.
+*		Master horizontal width set in ems for main - an 'ideal' of 1024px across.
 *			Use formula: desired size / font size of containing element.	
 *
 *		Subsequent horizontal widths - margins, padding, et al in percentages (% are at least to me a more logical unit for the horiz).
@@ -78,50 +82,49 @@ main
 		display inline-block
 		font-family "ff-cocon-web-pro","Helvetica",sans-serif
 		font-size: 5rem												/* 80/16  */
-		line-height: 2;											
-		margin 0.2em 0												/* V: 16/9 */
+		line-height: 1.5;											
+		margin 0.2em 0												/*  */
 
 	h2,
 	.h2
 		font-family ff-cocon-web-pro
 		font-size 2rem								/* 32/16 */
-		line height 1.5		
-		margin 0.75em 0								/* 18/24 */
+		line height 1		
+		margin 0 0 0.809em 0						/*  25.888/32 */
 
 	h3,
 	.h3
 		font-size 1.125rem							/* 18/16 */
-		line-height 1.4								
-		margin 1em 0								/* V: 18/18 */		
+		line-height 1								
+		margin 1em 0								/* V: */		
 
 	h4,
 	.h4
 		font-size 1rem								/* 16/16 */
-		line-height  1.125em						/* 18/16 */
-		margin 1.125em 0							/* 18/16 */
+		margin 1.125em 0							/*  */
 
 	p,
 	.p
 		font-size 1rem								
 		line-height 1.5			
-		margin 1.286em 0							/* V: 18/14 */
+		margin 0 0 1.362em 0						/*  21.801/16 */
 
 	ul,
 	.ul
-		line-height 1.3
-		margin 1.286em 0							/* V: 18/14 */
+
+		margin 1.362em 0 1.362em 0					/*  21.801/16 */
 
 		li,
 		.li
 			list-style-type disc	
-			margin-left 1.286% 						/* 18/14 */
+			margin-left 1.286% 						/*  */
 
 	.nestedList
 		font-size 0.875rem
 		margin 0
 
 		.nestedlistItem
-			margin-left 2.571%						/* 36/14 */
+			margin-left 2.571%						/*  */
 
 	dt,
 	.dt
@@ -129,8 +132,13 @@ main
 
 	dd,
 	.dd
-		padding-left 1.286% 						/* 18/14 */
+		padding-left 1.286% 						/*  */
 
+	h1, 
+	h2, 
+	h3, 
+	.leader 
+		text-rendering optimizeLegibility 
 
 
 /* wee utility beasties */
@@ -169,7 +177,14 @@ main
 	vertical-align top
 
 .contentColumn
+	margin-right 6.614%							/* 67.773 / 1024 */
 	width 45.359%								/* 464.486/1024 */
+
+	.leader
+		font-size 1.187rem						/* 19/16 */						
+		line-height 1.5
+		margin 0 0 1.362em 0					/*  25.888/19 */
+
 	
 .contentCallout
 	width 38.198%								/* 391.150/1024 */

@@ -11,7 +11,7 @@ var thePlaidLab = (function() {
 		console.log('registering handlers');
 
 		$(window).resize(function() {
-			debugBreakpoints();
+			//debugBreakpoints();
 		});
 
 	}

@@ -1,33 +1,32 @@
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}
-body@font-face{font-family:"icomoon";src:url("fonts/icomoon.eot");src:url("fonts/icomoon.eot?#iefix") format('embedded-opentype'),url("fonts/icomoon.woff") format('woff'),url("fonts/icomoon.ttf") format('truetype'),url("fonts/icomoon.svg#icomoon") format('svg')}
-{background-color:#eee;font-weight:normal;font-style:normal}
-@font-face{font-family:"icomoon";src:url("fonts/icomoon.eot");src:url("fonts/icomoon.eot?#iefix") format('embedded-opentype'),url("fonts/icomoon.woff") format('woff'),url("fonts/icomoon.ttf") format('truetype'),url("fonts/icomoon.svg#icomoon") format('svg')}
+body{background:#eee url("/images/domAtDesk.png") top center no-repeat fixed}
 main{font-family:"myriad-pro","Arial",sans-serif;font-size:1rem;line-height:1.5;margin:16px auto;max-width:94%;padding:0;width:64em;}
 main h1,main .h1{display:inline-block;font-family:"ff-cocon-web-pro","Helvetica",sans-serif;font-size:5rem;line-height:1.5;margin:.446em 0;}
 main h2,main .h2{font-family:ff-cocon-web-pro;font-size:2rem;line:height 1;margin:0 0 .809em 0;}
-main h3,main .h3{font-size:1.125rem;line-height:1;margin:1em 0;}
+main h3,main .h3{font-size:1.125rem;line-height:1;margin:1.211em 0;}
 main h4,main .h4{font-size:1rem;margin:1.125em 0;}
 main p,main .p{font-size:1rem;line-height:1.5;margin:0 0 1.362em 0;}
-main ul,main .ul{margin:1.362em 0 1.362em 0;}
-main ul li,main .ul li,main ul .li,main .ul .li{list-style-type:disc;margin-left:1.286%;}
-main .nestedList{font-size:.875rem;margin:0;}
-main .nestedList .nestedlistItem{margin-left:2.571%;}
 main dt,main .dt{font-weight:bold}
-main dd,main .dd{padding-left:1.286%;}
 main h1,main h2,main h3,main .leader{text-rendering:optimizeLegibility}
 .intro{margin-bottom:0}
 .thoughts .points{margin-top:0}
 #labTitle{width:80%;}
-#labTitle .the{color:#000}
-#labTitle .plaid{color:#008000}
+#labTitle .the{color:#008000}
+#labTitle .plaid{color:#f00}
 #labTitle .lab{color:#00f}
 #weeMobileContent{display:none}
-.contentColumn,.contentCallout{display:inline-block;vertical-align:top}
-.contentColumn{margin-right:6.614%;width:45.359%;}
+.contentColumn,.contentCallout{background-color:#ddd;display:inline-block;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";padding:1.362em 2.129%;vertical-align:top}
+.contentColumn{margin-right:6.614%;width:42.578%;}
 .contentColumn .leader{font-size:1.187rem;line-height:1.5;margin:0 0 1.362em 0;}
 .contentCallout{width:38.198%;}
-.webFormula{border:solid 2px #00f;margin-top:15em;padding:0 3.446%;}
+.webFormula{border:solid 2px #00f;margin-top:15em;}
+.webFormula dd{margin-left:10.712%;}
+.behindTheCurtain,.currentExperiments,.portfolio{background-color:#ddd;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";margin:4.235em 0;padding:1.362em 2.129%;}
+.portfolio ul,.portfolio .ul{margin:1.362em 0 1.362em 0;}
+.portfolio ul li,.portfolio .ul li,.portfolio ul .li,.portfolio .ul .li{list-style-type:disc;margin-left:4.859%;}
+.portfolio .nestedList{font-size:.875rem;margin:0;}
+.portfolio .nestedList .nestedlistItem{margin-left:6.62%;}
 @media all and (max-width: 20em){#weeMobileContent{display:block}
 .bio,.tinkering,.stage{display:none}
 *[data-module="slideshow"]{display:none}

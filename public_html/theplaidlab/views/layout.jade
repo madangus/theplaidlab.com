@@ -2,6 +2,15 @@ doctype 5
 html
 	head
 
+		script
+			if (! window.console) {
+				window.console = {};
+				window.console.log = function() {};
+			} else {
+				console.log('console found');
+			}
+
+			
 		<!-- typekit -->
 
 		script(src="//use.typekit.net/zak4bpe.js")
@@ -10,13 +19,7 @@ html
 		
 		<!-- end typekit -->
 
-
 		script
-			if (! console && console.log) {
-				console = {};
-				console.log = function() {};
-			}
-
 			// For debugging this gets output later
 			var lWidth = document.documentElement.clientWidth;
 			window.domsNastyGlobalOriginalLayoutViewport = lWidth;

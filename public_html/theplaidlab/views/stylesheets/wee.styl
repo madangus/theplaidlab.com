@@ -1,29 +1,42 @@
 /* Styles for mobile portrait
 *		max-width 320px	
-*		320/16
+*		360/16
 */
 
-@media all and (max-width: 20em)
+@media screen and (max-width: 22.5em)
+	.bio,
+	.webFormula
+		display block
+		width 100%
 
 	#weeMobileContent
 		display block
 
-	.bio,
-	.tinkering,
-	.stage
-		display none
+	article
+		display block
 
 	*[data-module="slideshow"]
-		display none
+		overflow none
+
+		.desktopNav
+			display none
+		
+		article
+			display block
+
+		*[data-display-item]
+			display block
+
+
 
 
 /* Styles for mobile landscape 
 *		max-width 540px	
-*		540/16
+*		640/16
 */
 
 
-@media all and (max-width: 33.75em) 
+@media screen and (min-width: 22.6em) and (max-width: 40em) 
 	#weeMobileContent
 		display block
 

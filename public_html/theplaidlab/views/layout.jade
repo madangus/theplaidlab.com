@@ -12,6 +12,11 @@ html
 
 
 		script
+			if (! console && console.log) {
+				console = {};
+				console.log = function() {};
+			}
+
 			// For debugging this gets output later
 			var lWidth = document.documentElement.clientWidth;
 			window.domsNastyGlobalOriginalLayoutViewport = lWidth;

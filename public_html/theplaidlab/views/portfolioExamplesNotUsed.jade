@@ -1,0 +1,23 @@
+					article(data-display-item="blair")
+						h3 William Blair - <em>Summit</em> - Internal stock analysis and trade tool 
+						p Summit provides the William Blair team a unique in-house edge. I ramped up quickly - learning the business and technical domain, adding features and correcting bugs. Becoming the 'owner' of the front end quickly allowed the original team to smoothly transition to new projects.
+						ul.tech
+							li Built with the <a href="http://javascriptmvc.com">Javascript-MVC framework</a>, <a href="https://developer.mozilla.org/en-US/docs/Rhino">Rhino</a> and <a href="http://www.mongodb.org">MongoDB</a>.
+							li Codebase organized into global components and more granular views composed of modules. 
+							li Heavy use of SVG for graphing, leveraging the commercial <a href="http://www.highcharts.com">Highcharts</a> library.
+
+						div.thoughts
+							h4 JavascriptMVC... Bland name, mature framework
+							p.intro JMVC is JQuery based and offers a lot that is similar to Backbone.js, Ember.js, Angular.js, something-new-just-came-out.js - with some notable differences:
+							ul
+								li The core model, view and controller objects are essentially JQuery plug-ins - jQueryMX being their family name.
+								li The JQuery base does make event registration easy, though I prefer the Backbone.js hash method. Why?
+									ul.nestedList
+										li.nestedListItem A wee bit more concise to my mind... 
+										li.nestedListItem Follows the widely <a href="http://shop.oreilly.com/product/0636920025245.do">recommended pattern</a> of separating callbacks into independent functions... 
+								li Steal.js - part of the full JMVC package - offers dependency managment and production build options. Similar in some ways to require.js.
+								li Additionally, an extensive testing and documentation framework is part of the JMVC full package.
+								li JMVC is very supportive/opinionated <a href="http://javascriptmvc.com/docs.html#!organizing">about how code is structured</a> and borrows a smidge from Ruby on Rails. 
+								li Unlike backbone.js, there is no default routing mechanism (odd given the RoR influence).
+								li A stable and battle tested framework but does not seem as active or popular as backbone.js or angular.js. 
+

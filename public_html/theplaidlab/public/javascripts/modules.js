@@ -99,14 +99,12 @@ thePlaidLabModules.slideshow = {
 					*	(b) Just use a graphical click left/right - if this was a high volume commercial site I would probably do this
 					*	(c) Browser sniff and show graphical left/right click targets just for android chrome 18
 					*
-					*	So this is awful, however, calling preventDefault breaks the experience on iOS leaving us to
+					*	So this is awful, however, calling preventDefault breaks the experience on iOS and stock android browser leaving us to
 					*	sniff, reproduce vertical scrolling or go with graphical clickers. Ugghhhh.
 					*
 					*/
 
 					if ( navigator.userAgent.match(/Android/i) && navigator.userAgent.match(/Chrome\/18/i) ) { 
-						// for mobile chrome to get around http://code.google.com/p/android/issues/detail?id=19827
-						// Note, while the stock android browser does not suffer from this bug, the hack below does not break it. 
 						event.preventDefault();
 					}
 
@@ -157,7 +155,7 @@ thePlaidLabModules.slideshow = {
 
 	},
 	moveStage: function(dir) {
-		var scrollyPx, scrolly;
+		var scrollxPx, scrollx;
 		var prevItem = this.currentItem;
 
 		if (dir === 'backward') {
@@ -170,17 +168,17 @@ thePlaidLabModules.slideshow = {
 
 		if (prevItem !== this.currentItem) {
 			if (this.currentItem === 1) {
-				scrolly = 0;				
-				scrollyPx = '0px';
+				scrollx = 0;				
+				scrollxPx = '0px';
 			} else {
-				scrolly = (dir === 'backward') ? this.stagePos - this.stageWidth : this.stagePos + this.stageWidth;
-				scrollyPx = '-' + scrolly + 'px';
+				scrollx = (dir === 'backward') ? this.stagePos - this.stageWidth : this.stagePos + this.stageWidth;
+				scrollxPx = '-' + scrollx + 'px';
 			}
 
-			console.log(dir + ' to ' + scrollyPx);
+			console.log(dir + ' to ' + scrollxPx);
 			var $wrapper = $('*[data-control="stage"]').find('.itemsWrapper').first(); 
-			$wrapper.css("margin-left",scrollyPx);
-			this.stagePos = scrolly;
+			$wrapper.css("margin-left",scrollxPx);
+			this.stagePos = scrollx;
 		}
 	}
 

@@ -28,7 +28,7 @@ main h1,main h2,main h3,main .leader{text-rendering:optimizeLegibility}
 .portfolio ul li,.portfolio .ul li,.portfolio ul .li,.portfolio .ul .li{list-style-type:disc;margin-left:4.859%;}
 .portfolio .nestedList{font-size:14px;font-size:.875rem;margin:0;}
 .portfolio .nestedList .nestedlistItem{margin-left:6.62%;}
-.portfolio .shot{border:0;margin:1em 0}
+.portfolio .shot{border:0;display:block;margin:1em auto;width:95.444%;}
 .portfolio .inspect{margin-top:0}
 *[data-module="slideshow"]{opacity:1;-ms-filter:none;filter:none;}
 *[data-module="slideshow"] .mobileNav{display:none}

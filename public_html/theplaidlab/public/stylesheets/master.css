@@ -5,7 +5,7 @@ main{font-family:"myriad-pro","Arial",sans-serif;font-size:1rem;line-height:1.5;
 main h1,main .h1{display:inline-block;font-family:"ff-cocon-web-pro","Helvetica",sans-serif;font-size:80px;font-size:5rem;line-height:1.5;margin:.446em 0;}
 main h2,main .h2{font-family:ff-cocon-web-pro;font-size:32px;font-size:2rem;line:height 1;margin:0 0 .809em 0;}
 main h3,main .h3{font-size:18px;font-size:1.125rem;line-height:1;margin:1.211em 0;}
-main h4,main .h4{font-size:16px;font-size:1rem;margin:1.125em 0;}
+main h4,main .h4{font-size:18px;font-size:1.125rem;font-style:italic;margin:1.125em 0 .5em 0}
 main p,main .p{font-size:16px;font-size:1rem;line-height:1.5;margin:0 0 1.362em 0;}
 main dt,main .dt{font-weight:bold}
 main h1,main h2,main h3,main .leader{text-rendering:optimizeLegibility}
@@ -28,12 +28,16 @@ main h1,main h2,main h3,main .leader{text-rendering:optimizeLegibility}
 .portfolio ul li,.portfolio .ul li,.portfolio ul .li,.portfolio .ul .li{list-style-type:disc;margin-left:4.859%;}
 .portfolio .nestedList{font-size:14px;font-size:.875rem;margin:0;}
 .portfolio .nestedList .nestedlistItem{margin-left:6.62%;}
+.portfolio .shot{border:0;margin:1em 0}
+.portfolio .inspect{margin-top:0}
+*[data-module="slideshow"]{opacity:1;-ms-filter:none;filter:none;}
 *[data-module="slideshow"] .mobileNav{display:none}
 *[data-module="slideshow"] .portfolioHeading,*[data-module="slideshow"] .desktopNav{display:inline-block}
 *[data-module="slideshow"] .desktopNav{text-align:right;width:75%}
-*[data-module="slideshow"] *[data-control="stage"]{display:inline-block;overflow:hidden;width:91.796%;}
+*[data-module="slideshow"] *[data-control="stage"]{display:inline-block;margin-left:2.75em;overflow:hidden;width:91.796%;}
 *[data-module="slideshow"] .itemsWrapper{-webkit-transition:.5s all linear;-moz-transition:.5s all linear;-o-transition:.5s all linear;-ms-transition:.5s all linear;transition:.5s all linear;width:500%;}
 *[data-module="slideshow"] *[data-display-item]{display:inline-block;margin:0 .425%;vertical-align:top;width:19.148%;}
+*[data-module="slideshow"] *[data-display-item] h3{margin-top:0}
 *[data-module="slideshow"] *[data-control="pager"]{clear:both}
 @media all and (max-width: 48em){#weeMobileContent{display:none}
 .bio,.tinkering,.stage{display:block}

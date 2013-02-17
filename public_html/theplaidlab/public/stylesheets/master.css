@@ -2,11 +2,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}
 body{background:#eee url("/images/domAtDesk.png") top center no-repeat fixed}
 main{font-family:"myriad-pro","Arial",sans-serif;font-size:1rem;line-height:1.5;margin:16px auto;max-width:94%;padding:0;width:64em;}
-main h1,main .h1{display:inline-block;font-family:"ff-cocon-web-pro","Helvetica",sans-serif;font-size:5rem;line-height:1.5;margin:.446em 0;}
-main h2,main .h2{font-family:ff-cocon-web-pro;font-size:2rem;line:height 1;margin:0 0 .809em 0;}
-main h3,main .h3{font-size:1.125rem;line-height:1;margin:1.211em 0;}
-main h4,main .h4{font-size:1rem;margin:1.125em 0;}
-main p,main .p{font-size:1rem;line-height:1.5;margin:0 0 1.362em 0;}
+main h1,main .h1{display:inline-block;font-family:"ff-cocon-web-pro","Helvetica",sans-serif;font-size:80px;font-size:5rem;line-height:1.5;margin:.446em 0;}
+main h2,main .h2{font-family:ff-cocon-web-pro;font-size:32px;font-size:2rem;line:height 1;margin:0 0 .809em 0;}
+main h3,main .h3{font-size:18px;font-size:1.125rem;line-height:1;margin:1.211em 0;}
+main h4,main .h4{font-size:16px;font-size:1rem;margin:1.125em 0;}
+main p,main .p{font-size:16px;font-size:1rem;line-height:1.5;margin:0 0 1.362em 0;}
 main dt,main .dt{font-weight:bold}
 main h1,main h2,main h3,main .leader{text-rendering:optimizeLegibility}
 .intro{margin-bottom:0}
@@ -18,18 +18,19 @@ main h1,main h2,main h3,main .leader{text-rendering:optimizeLegibility}
 #weeMobileContent{display:none}
 .contentColumn,.contentCallout{background-color:#ddd;display:inline-block;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";padding:1.362em 2.129%;vertical-align:top}
 .contentColumn{margin-right:6.614%;width:42.578%;}
-.contentColumn .leader{font-size:1.187rem;line-height:1.5;margin:0 0 1.362em 0;}
+.contentColumn .leader{font-size:19px;font-size:1.187rem;line-height:1.5;margin:0 0 1.362em 0;}
 .contentCallout{width:38.198%;}
 .webFormula{border:solid 2px #000;margin-top:15em;}
 .webFormula dd{margin-left:10.712%;}
 .behindTheCurtain,.currentExperiments,.portfolio{background-color:#ddd;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";margin:4.235em 0;padding:1.362em 2.129%;}
+.skillBucket{margin-top:4.6em}
 .portfolio ul,.portfolio .ul{margin:1.362em 0 1.362em 0;}
 .portfolio ul li,.portfolio .ul li,.portfolio ul .li,.portfolio .ul .li{list-style-type:disc;margin-left:4.859%;}
-.portfolio .nestedList{font-size:.875rem;margin:0;}
+.portfolio .nestedList{font-size:14px;font-size:.875rem;margin:0;}
 .portfolio .nestedList .nestedlistItem{margin-left:6.62%;}
 *[data-module="slideshow"] .mobileNav{display:none}
 *[data-module="slideshow"] .portfolioHeading,*[data-module="slideshow"] .desktopNav{display:inline-block}
-*[data-module="slideshow"] .desktopNav{text-align:right;width:81.649%;}
+*[data-module="slideshow"] .desktopNav{text-align:right;width:75%}
 *[data-module="slideshow"] *[data-control="stage"]{display:inline-block;overflow:hidden;width:91.796%;}
 *[data-module="slideshow"] .itemsWrapper{-webkit-transition:.5s all linear;-moz-transition:.5s all linear;-o-transition:.5s all linear;-ms-transition:.5s all linear;transition:.5s all linear;width:500%;}
 *[data-module="slideshow"] *[data-display-item]{display:inline-block;margin:0 .425%;vertical-align:top;width:19.148%;}

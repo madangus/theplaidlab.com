@@ -1,3 +1,77 @@
+@font-face{font-family:'icomoon';src:url("fonts/icomoon.eot");src:url("fonts/icomoon.eot?#iefix") format('embedded-opentype'),url("fonts/icomoon.woff") format('woff'),url("fonts/icomoon.ttf") format('truetype'),url("fonts/icomoon.svg#icomoon") format('svg');font-weight:normal;font-style:normal}
+[data-icon]:before{font-family:'icomoon';content:attr(data-icon);speak:none;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased}
+.icon-share:before,.icon-paste:before,.icon-paste-2:before,.icon-paste-3:before,.icon-font:before,.icon-filter:before,.icon-filter-2:before,.icon-arrow-right:before,.icon-arrow-left:before,.icon-arrow-right-2:before,.icon-arrow-left-2:before,.icon-arrow-right-3:before,.icon-arrow-up:before,.icon-arrow-up-right:before,.icon-arrow-up-left:before,.icon-arrow-down-right:before,.icon-arrow-down:before,.icon-arrow-down-left:before,.icon-arrow-left-3:before,.icon-arrow-down-left-2:before,.icon-arrow-down-2:before,.icon-arrow-down-right-2:before,.icon-arrow-up-right-2:before,.icon-arrow-up-2:before,.icon-arrow-up-left-2:before,.icon-shuffle:before,.icon-arrow-up-3:before,.icon-arrow-up-right-3:before,.icon-arrow-down-right-3:before,.icon-arrow-down-3:before,.icon-arrow-down-left-3:before,.icon-bold:before,.icon-underline:before,.icon-italic:before,.icon-bubble:before,.icon-zoom-in:before,.icon-zoom-out:before,.icon-binoculars:before,.icon-bubble-2:before,.icon-bubbles:before,.icon-bubbles-2:before,.icon-expand:before,.icon-user:before,.icon-users:before,.icon-cog:before,.icon-flag:before,.icon-lightning:before,.icon-lab:before,.icon-spam:before,.icon-close:before,.icon-checkmark:before,.icon-checkmark-circle:before,.icon-cancel-circle:before,.icon-info:before,.icon-info-2:before,.icon-warning:before,.icon-point-left:before,.icon-point-down:before,.icon-point-right:before,.icon-point-up:before,.icon-smiley:before,.icon-stats:before,.icon-unlocked:before,.icon-lock:before,.icon-spinner:before,.icon-trophy:before,.icon-gift:before,.icon-embed:before,.icon-code:before,.icon-arrow-up-left-3:before,.icon-share-2:before{font-family:'icomoon';speak:none;font-style:normal;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased}
+.icon-share:before{content:"\e000"}
+.icon-paste:before{content:"\e001"}
+.icon-paste-2:before{content:"\e002"}
+.icon-paste-3:before{content:"\e003"}
+.icon-font:before{content:"\e004"}
+.icon-filter:before{content:"\e005"}
+.icon-filter-2:before{content:"\e006"}
+.icon-arrow-right:before{content:"\e007"}
+.icon-arrow-left:before{content:"\e008"}
+.icon-arrow-right-2:before{content:"\e009"}
+.icon-arrow-left-2:before{content:"\e00a"}
+.icon-arrow-right-3:before{content:"\e00b"}
+.icon-arrow-up:before{content:"\e00c"}
+.icon-arrow-up-right:before{content:"\e00d"}
+.icon-arrow-up-left:before{content:"\e00e"}
+.icon-arrow-down-right:before{content:"\e00f"}
+.icon-arrow-down:before{content:"\e010"}
+.icon-arrow-down-left:before{content:"\e011"}
+.icon-arrow-left-3:before{content:"\e012"}
+.icon-arrow-down-left-2:before{content:"\e013"}
+.icon-arrow-down-2:before{content:"\e014"}
+.icon-arrow-down-right-2:before{content:"\e015"}
+.icon-arrow-up-right-2:before{content:"\e016"}
+.icon-arrow-up-2:before{content:"\e017"}
+.icon-arrow-up-left-2:before{content:"\e018"}
+.icon-shuffle:before{content:"\e019"}
+.icon-arrow-up-3:before{content:"\e01a"}
+.icon-arrow-up-right-3:before{content:"\e01b"}
+.icon-arrow-down-right-3:before{content:"\e01c"}
+.icon-arrow-down-3:before{content:"\e01d"}
+.icon-arrow-down-left-3:before{content:"\e01e"}
+.icon-bold:before{content:"\e01f"}
+.icon-underline:before{content:"\e020"}
+.icon-italic:before{content:"\e021"}
+.icon-bubble:before{content:"\e022"}
+.icon-zoom-in:before{content:"\e023"}
+.icon-zoom-out:before{content:"\e024"}
+.icon-binoculars:before{content:"\e025"}
+.icon-bubble-2:before{content:"\e026"}
+.icon-bubbles:before{content:"\e027"}
+.icon-bubbles-2:before{content:"\e028"}
+.icon-expand:before{content:"\e029"}
+.icon-user:before{content:"\e02a"}
+.icon-users:before{content:"\e02b"}
+.icon-cog:before{content:"\e02c"}
+.icon-flag:before{content:"\e02d"}
+.icon-lightning:before{content:"\e02e"}
+.icon-lab:before{content:"\e02f"}
+.icon-spam:before{content:"\e032"}
+.icon-close:before{content:"\e033"}
+.icon-checkmark:before{content:"\e034"}
+.icon-checkmark-circle:before{content:"\e035"}
+.icon-cancel-circle:before{content:"\e036"}
+.icon-info:before{content:"\e037"}
+.icon-info-2:before{content:"\e038"}
+.icon-warning:before{content:"\e039"}
+.icon-point-left:before{content:"\e03a"}
+.icon-point-down:before{content:"\e03b"}
+.icon-point-right:before{content:"\e03c"}
+.icon-point-up:before{content:"\e03d"}
+.icon-smiley:before{content:"\e03e"}
+.icon-stats:before{content:"\e03f"}
+.icon-unlocked:before{content:"\e040"}
+.icon-lock:before{content:"\e041"}
+.icon-spinner:before{content:"\e042"}
+.icon-trophy:before{content:"\e043"}
+.icon-gift:before{content:"\e044"}
+.icon-embed:before{content:"\e045"}
+.icon-code:before{content:"\e046"}
+.icon-arrow-up-left-3:before{content:"\e047"}
+.icon-share-2:before{content:"\e030"}
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}
 body{background:#eee url("/images/domAtDesk.png") top center no-repeat fixed}
@@ -24,6 +98,7 @@ main h1,main h2,main h3,main .leader{text-rendering:optimizeLegibility}
 .webFormula dd{margin-left:10.712%;}
 .behindTheCurtain,.currentExperiments,.portfolio{background-color:#ddd;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";margin:4.235em 0;padding:1.362em 2.129%;}
 .skillBucket{margin-top:4.6em}
+.portfolio h3{margin-top:0}
 .portfolio ul,.portfolio .ul{margin:1.362em 0 1.362em 0;}
 .portfolio ul li,.portfolio .ul li,.portfolio ul .li,.portfolio .ul .li{list-style-type:disc;margin-left:4.859%;}
 .portfolio .nestedList{font-size:14px;font-size:.875rem;margin:0;}
@@ -37,7 +112,6 @@ main h1,main h2,main h3,main .leader{text-rendering:optimizeLegibility}
 *[data-module="slideshow"] *[data-control="stage"]{display:inline-block;margin-left:2.75em;overflow:hidden;width:91.796%;}
 *[data-module="slideshow"] .itemsWrapper{-webkit-transition:.5s all linear;-moz-transition:.5s all linear;-o-transition:.5s all linear;-ms-transition:.5s all linear;transition:.5s all linear;width:500%;}
 *[data-module="slideshow"] *[data-display-item]{display:inline-block;margin:0 .425%;vertical-align:top;width:19.148%;}
-*[data-module="slideshow"] *[data-display-item] h3{margin-top:0}
 *[data-module="slideshow"] *[data-control="pager"]{clear:both}
 @media all and (max-width: 48em){#weeMobileContent{display:none}
 .bio,.tinkering,.stage{display:block}

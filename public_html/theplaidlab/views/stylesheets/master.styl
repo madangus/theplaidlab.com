@@ -63,19 +63,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 */
 
 
+/* vars */
+
+$overallContentWidth = 64em			/* 1024/16 */
+
+
 /* global defaults */
 
 body
 	background #eee url('/images/domAtDesk.png') top center no-repeat fixed
 
-main
+main,
+footer
 	font-family "myriad-pro","Arial",sans-serif
 	font-size 1rem													/* 16px */
 	line-height 1.5 												/* 150% */ 
 	margin 16px auto
 	max-width 94%
 	padding 0
-	width 64em														/* 1024/16 */
+	width $overallContentWidth
 
 
 	h1,
@@ -215,12 +221,12 @@ main
 
 .behindTheCurtain,
 .currentExperiments,
-.portfolio {
+.portfolio
 	background-color #ddd	
 	opacity 0.9
 	margin 4.235em 0							/* v: 67.773/16 */
 	padding 1.362em 2.129%						/* v: 21.801/16  h: 21.801/1024 */
-}
+
 
 .skillBucket {
 	margin-top 4.6em
@@ -259,6 +265,19 @@ main
 
 	.inspect
 		margin-top 0
+
+
+/* footer */
+
+footer
+	background-color #ddd	
+	opacity 0.9
+
+	.contact
+		padding 1.362em 2.129% 0 2.129%						/* v: 21.801/16  h: 21.801/1024 */
+
+	.disclaimer
+		padding 0 2.129% 1.362em 2.129%						/* v: 21.801/16  h: 21.801/1024 */
 
 
 /* imports 

@@ -17,7 +17,21 @@ thePlaidLabModules.slideshow = {
 		this.stagePos = 0;
 		this.registerHandlers();
 		this.setupTouchSupport();
+		this.displayNav();		
 	},
+	displayNav: function() {
+		if (this.currentItem === 1) {
+			$('*[data-module="slideshow"] *[data-action="backward"]').addClass('hide');
+		} else {
+			$('*[data-module="slideshow"] *[data-action="backward"]').removeClass('hide');
+		}
+
+		if (this.currentItem === this.itemsCount) {
+			$('*[data-module="slideshow"] *[data-action="forward"]').addClass('hide');
+		} else {
+			$('*[data-module="slideshow"] *[data-action="forward"]').removeClass('hide');
+		}
+	},	
 	registerHandlers: function() {
 		$(document.documentElement).keyup(function (event) {
 			// If there were form elements on the page we would be more careful about this
@@ -179,6 +193,9 @@ thePlaidLabModules.slideshow = {
 			$wrapper.css("margin-left",scrollxPx);
 			this.stagePos = scrollx;
 		}
+
+		this.displayNav();
+
 	}
 
 

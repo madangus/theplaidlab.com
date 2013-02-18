@@ -56,9 +56,13 @@ block content
 		section.portfolio(data-module="slideshow")
 			h2.portfolioHeading Successful Results
 			p.mobileNav Swipe left or right to see my different projects.
-			p.desktopNav Controls: <strong>F or left arrow key</strong> goes forward. <strong>B or right arrow key</strong> goes back.
 
 			div(data-control="stage")
+				<span class="icon-arrow-left backwardTop" data-control="navigate" data-action="backward" role=”navigation”></span>
+				<span class="icon-arrow-right forwardTop" data-control="navigate" data-action="forward" role=”navigation”></span>
+				<span class="icon-arrow-left backwardBottom" data-control="navigate" data-action="backward" role=”navigation”></span>
+				<span class="icon-arrow-right forwardBottom" data-control="navigate" data-action="forward" role=”navigation”></span>
+
 				.itemsWrapper
 
 					article(data-display-item="orbitz")

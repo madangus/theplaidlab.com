@@ -28,11 +28,10 @@ thePlaidLabModules.slideshow = {
 			}
 		});
 
-		// In case I decide to add some graphical nav elements back
 		if ( $('*[data-module="slideshow"] *[data-control="navigate"]').length ) {
 			$('*[data-module="slideshow"]').on('click', '*[data-control="navigate"]', function(event) {
 				var dir = $(this).attr("data-action");
-				if (dir) {
+				if (dir && $(this).css('display') !== 'none') {
 					thePlaidLabModules.slideshow.moveStage(dir);
 				}
 			});

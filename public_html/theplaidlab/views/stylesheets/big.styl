@@ -1,18 +1,14 @@
 /* Styles for laptop/desktop */
 
 *[data-module="slideshow"]
-	opacity 1		
+	opacity 1
+	position relative		
 
 	.mobileNav
 		display none
 
-	.portfolioHeading,
-	.desktopNav
+	.portfolioHeading
 		display inline-block
-
-	.desktopNav
-		text-align right	
-		width 75%
 
 	*[data-control="stage"]
 		display inline-block
@@ -23,6 +19,30 @@
 	.itemsWrapper
 		transition 0.5s all linear		
 		width 500%								/* 4700/940 (Desired size is number of items * length of each item including margin) */
+
+	*[data-control="navigate"]
+		color blue
+		cursor pointer
+		display block
+		font-size 2rem
+		position absolute
+
+		&.backwardTop
+			top 8%
+			left 3%
+		
+		&.forwardTop
+			top 8%
+			left 94%
+
+		&.backwardBottom
+			top 94%
+			left 3%
+		
+		&.forwardBottom
+			top 94%
+			left 94%
+
 
 	*[data-display-item]
 		display inline-block

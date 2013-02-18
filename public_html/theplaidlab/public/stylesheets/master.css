@@ -89,20 +89,26 @@ main h1,footer h1,main h2,footer h2,main h3,footer h3,main .leader,footer .leade
 .formulaIcon.html{color:#00f}
 .formulaIcon.js{color:#f00}
 .formulaIcon.css{color:#008000}
+.contentColumn,.contentCallout{background-color:#ddd;display:inline-block;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";padding:1.362em 2.129%;vertical-align:top}
+.contentColumn{margin-right:6.614%;width:42.578%;}
+.contentColumn .leader{font-size:19px;font-size:1.187rem;line-height:1.5;margin:0 0 1.362em 0;}
+.contentCallout{width:38.198%}
 #labTitle{width:80%;}
 #labTitle .the{color:#fff}
 #labTitle .plaid{color:#fff}
 #labTitle .lab{color:#fff}
 #weeMobileContent{display:none}
-.contentColumn,.contentCallout{background-color:#ddd;display:inline-block;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";padding:1.362em 2.129%;vertical-align:top}
-.contentColumn{margin-right:6.614%;width:42.578%;}
-.contentColumn .leader{font-size:19px;font-size:1.187rem;line-height:1.5;margin:0 0 1.362em 0;}
-.contentCallout{width:38.198%;}
-.webFormula{border:solid 2px #000;margin-top:15em;}
-.webFormula .formulaIcon{margin-right:4.092%;}
-.webFormula dd,.webFormula .oo{margin-left:14.596%;}
-.webFormula .ooContainer{margin:0;}
-.webFormula .ooContainer .icon-info{color:#00f;font-size:2rem;position:relative;top:1.5em}
+.bio,.sidebar{display:inline-block;vertical-align:top}
+.bio{width:42.578%;}
+.bio .contentColumn{padding:1.362em 5%;width:100%;}
+.sidebar{margin-left:14.5%;width:38.198%;}
+.sidebar .primaryNav,.sidebar .webFormula{padding:1.362em 5.573%;width:100%}
+.sidebar .primaryNav{margin-bottom:2.75em;}
+.sidebar .webFormula{border:solid 2px #000;margin-top:8.125em;}
+.sidebar .webFormula .formulaIcon{margin-right:4.092%;}
+.sidebar .webFormula dd,.sidebar .webFormula .oo{margin-left:14.596%;}
+.sidebar .webFormula .ooContainer{margin:0;}
+.sidebar .webFormula .ooContainer .icon-info{color:#00f;font-size:2rem;position:relative;top:1.5em}
 .behindTheCurtain,.currentExperiments,.portfolio{background-color:#ddd;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";margin:4.235em 0;padding:1.362em 2.129%;}
 .skillBucket{margin-top:4.6em}
 .portfolio h3{margin-top:0}

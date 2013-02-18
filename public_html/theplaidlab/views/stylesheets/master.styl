@@ -66,6 +66,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* vars */
 
 $overallContentWidth = 64em			/* 1024/16 */
+$contentColumnWidth = 42.578%			/* 436/1024 ( 464 - 26 padding, 2 cushion) */
+$contentCalloutWidth = 38.198%				/* 391.150/1024 */
 
 
 /* global defaults */
@@ -158,6 +160,32 @@ footer
 	&.css
 		color green
 
+/* 2 col 
+* contentCol on left, contentCallouts on right
+*/
+
+.contentColumn,
+.contentCallout
+	background-color #ddd
+	display inline-block
+	opacity 0.9
+	padding 1.362em 2.129%						/* v: 21.801/16  h: 21.801/1024 */
+	vertical-align top
+
+.contentColumn
+	margin-right 6.614%							/* 67.773 / 1024 */	
+	width $contentColumnWidth
+
+	.leader
+		font-size 19px
+		font-size 1.187rem						/* 19/16 */						
+		line-height 1.5
+		margin 0 0 1.362em 0					/*  25.888/19 */
+
+.contentCallout
+	width $contentCalloutWidth
+
+
 /* title */
 
 #labTitle
@@ -177,46 +205,49 @@ footer
 
 /* intro */
 
-.contentColumn,
-.contentCallout
-	background-color #ddd
+.bio,
+.sidebar
 	display inline-block
-	opacity 0.9
-	padding 1.362em 2.129%						/* v: 21.801/16  h: 21.801/1024 */
 	vertical-align top
 
-.contentColumn
-	margin-right 6.614%							/* 67.773 / 1024 */	
-	width 42.578%								/* 436/1024 ( 464 - 26 padding, 2 cushion) */
+.bio
+	width $contentColumnWidth
 
-	.leader
-		font-size 19px
-		font-size 1.187rem						/* 19/16 */						
-		line-height 1.5
-		margin 0 0 1.362em 0					/*  25.888/19 */
+	.contentColumn
+		padding 1.362em 5%						/* v: 21.801/16  h: 21.801/436 */
+		width 100%		/* of bio width */
 
-.contentCallout
-	width 38.198%								/* 391.150/1024 */
+.sidebar 
+	margin-left 14.5%								/*  148 / 1024 ... margin orig 67.773 */	
+	width $contentCalloutWidth
 
-.webFormula
-	border solid 2px black
-	margin-top 15em								/* 241.749/16 */
+	.primaryNav,
+	.webFormula
+		padding 1.362em 5.573%					/* v: 21.801/16  h: 21.801/391.150 */
+		width 100%
 
-	.formulaIcon
-		margin-right 4.092%						/* 16/391 */
+	.primaryNav
+		margin-bottom 2.75em							/* 44/16 */
 
-	dd,
-	.oo
-		margin-left 14.596% 					/* 57.073/391 */
+	.webFormula
+		border solid 2px black
+		margin-top 8.125em 							/* 130/16 */
 
-	.ooContainer
-		margin 0
+		.formulaIcon
+			margin-right 4.092%						/* 16/391 */
 
-		.icon-info
-			color blue
-			font-size 2rem
-			position relative
-			top 1.5em			
+		dd,
+		.oo
+			margin-left 14.596% 					/* 57.073/391 */
+
+		.ooContainer
+			margin 0
+
+			.icon-info
+				color blue
+				font-size 2rem
+				position relative
+				top 1.5em			
 
 
 .behindTheCurtain,
@@ -227,10 +258,9 @@ footer
 	margin 4.235em 0							/* v: 67.773/16 */
 	padding 1.362em 2.129%						/* v: 21.801/16  h: 21.801/1024 */
 
-
-.skillBucket {
+.skillBucket 
 	margin-top 4.6em
-}
+
 
 /* portfolio */
 

@@ -1,4 +1,4 @@
-@font-face{font-family:'icomoon';src:url("fonts/icomoon.eot");src:url("fonts/icomoon.eot?#iefix") format('embedded-opentype'),url("fonts/icomoon.woff") format('woff'),url("fonts/icomoon.ttf") format('truetype'),url("fonts/icomoon.svg#icomoon") format('svg');font-weight:normal;font-style:normal}
+@font-face{font-family:'icomoon';src:url("/fonts/icomoon.eot");src:url("/fonts/icomoon.eot?#iefix") format('embedded-opentype'),url("/fonts/icomoon.woff") format('woff'),url("/fonts/icomoon.ttf") format('truetype'),url("/fonts/icomoon.svg#icomoon") format('svg');font-weight:normal;font-style:normal}
 [data-icon]:before{font-family:'icomoon';content:attr(data-icon);speak:none;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased}
 .icon-share:before,.icon-paste:before,.icon-paste-2:before,.icon-paste-3:before,.icon-font:before,.icon-filter:before,.icon-filter-2:before,.icon-arrow-right:before,.icon-arrow-left:before,.icon-arrow-right-2:before,.icon-arrow-left-2:before,.icon-arrow-right-3:before,.icon-arrow-up:before,.icon-arrow-up-right:before,.icon-arrow-up-left:before,.icon-arrow-down-right:before,.icon-arrow-down:before,.icon-arrow-down-left:before,.icon-arrow-left-3:before,.icon-arrow-down-left-2:before,.icon-arrow-down-2:before,.icon-arrow-down-right-2:before,.icon-arrow-up-right-2:before,.icon-arrow-up-2:before,.icon-arrow-up-left-2:before,.icon-shuffle:before,.icon-arrow-up-3:before,.icon-arrow-up-right-3:before,.icon-arrow-down-right-3:before,.icon-arrow-down-3:before,.icon-arrow-down-left-3:before,.icon-bold:before,.icon-underline:before,.icon-italic:before,.icon-bubble:before,.icon-zoom-in:before,.icon-zoom-out:before,.icon-binoculars:before,.icon-bubble-2:before,.icon-bubbles:before,.icon-bubbles-2:before,.icon-expand:before,.icon-user:before,.icon-users:before,.icon-cog:before,.icon-flag:before,.icon-lightning:before,.icon-lab:before,.icon-spam:before,.icon-close:before,.icon-checkmark:before,.icon-checkmark-circle:before,.icon-cancel-circle:before,.icon-info:before,.icon-info-2:before,.icon-warning:before,.icon-point-left:before,.icon-point-down:before,.icon-point-right:before,.icon-point-up:before,.icon-smiley:before,.icon-stats:before,.icon-unlocked:before,.icon-lock:before,.icon-spinner:before,.icon-trophy:before,.icon-gift:before,.icon-embed:before,.icon-code:before,.icon-arrow-up-left-3:before,.icon-share-2:before{font-family:'icomoon';speak:none;font-style:normal;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased}
 .icon-share:before{content:"\e000"}
@@ -85,6 +85,10 @@ main dt,main .dt{font-weight:bold}
 main h1,main h2,main h3,main .leader{text-rendering:optimizeLegibility}
 .intro{margin-bottom:0}
 .thoughts .points{margin-top:0}
+.formulaIcon{font-size:32px;font-size:2rem;position:relative;top:.75em;}
+.formulaIcon.html{color:#00f}
+.formulaIcon.js{color:#f00}
+.formulaIcon.css{color:#008000}
 #labTitle{width:80%;}
 #labTitle .the{color:#fff}
 #labTitle .plaid{color:#fff}
@@ -95,7 +99,10 @@ main h1,main h2,main h3,main .leader{text-rendering:optimizeLegibility}
 .contentColumn .leader{font-size:19px;font-size:1.187rem;line-height:1.5;margin:0 0 1.362em 0;}
 .contentCallout{width:38.198%;}
 .webFormula{border:solid 2px #000;margin-top:15em;}
-.webFormula dd{margin-left:10.712%;}
+.webFormula .formulaIcon{margin-right:4.092%;}
+.webFormula dd,.webFormula .oo{margin-left:14.596%;}
+.webFormula .ooContainer{margin:0;}
+.webFormula .ooContainer .icon-info{color:#00f;font-size:2rem;position:relative;top:1.5em}
 .behindTheCurtain,.currentExperiments,.portfolio{background-color:#ddd;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";margin:4.235em 0;padding:1.362em 2.129%;}
 .skillBucket{margin-top:4.6em}
 .portfolio h3{margin-top:0}

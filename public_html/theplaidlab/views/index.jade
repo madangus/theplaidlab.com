@@ -62,7 +62,7 @@ block content
 			h2.portfolioHeading Successful Results
 			p.swipeNav Swipe left or right to see my different projects.
 
-			div(data-control="stage")
+			div#stage(data-control="stage")
 				<span class="icon-arrow-left backwardTop" data-control="navigate" data-action="backward" role=”navigation”></span>
 				<span class="icon-arrow-right forwardTop" data-control="navigate" data-action="forward" role=”navigation”></span>
 				<span class="icon-arrow-left backwardBottom" data-control="navigate" data-action="backward" role=”navigation”></span>
@@ -70,7 +70,7 @@ block content
 
 				.itemsWrapper
 
-					article(data-display-item="orbitz")
+					article.portfolioItem(data-display-item="orbitz")
 						h3 Orbitz Worldwide - <a href="http://www.orbitz.com/hotels/">Orbitz Hotels</a> - E-Commerce site
 						img(src="/images/orbitzHotel.png",border="0",class="shot")								
 						p After a successful period working on the Orbitz "classic" platform, blogs, Open Cuba and Orbitz for Business - I joined the high profile hotel team. This was the most critical product to the company and all features and bug fixes had to meet the highest accessibility and browser support standards across 17 points of sale; the same experience being served to millions of visitors daily across the Americas, Europe and Asia. 
@@ -83,7 +83,7 @@ block content
 							li First example of <a href="http://en.wikipedia.org/wiki/Glasgow_patter">Glaswegian</a> in the semantic markup of hotel search results. As of Jan 2013, div.weeResultsMapContainer is still there!
 
 
-					article(data-display-item="msg")
+					article.portfolioItem(data-display-item="msg")
 						h3 Madison Square Garden - <a href="http://www.msg.com">msg.com</a> - TV Network and Event site	
 						img(src="/images/msg.png",border="0",class="shot")
 						p Revved up and ready for tablets, mobiles and super wide displays - the redesigned msg.com emphasises HD content and leverages responsive design to complement the fans experience anywhere. I joined the team in the last push to finish the project, working on a CSS 3 driven prototype and the final production "Browse All Videos" page (#4 site destination). I employed modular construction of search, sort, filter and paginate js allowing the team to use it across the site with minimal effort.
@@ -99,7 +99,7 @@ block content
 							li On the homepage select the top left menu then select 'Browse All Video' page - /scripts/pagination.js or videoWall.js should be visible using your browser development tools.
 
 
-					article(data-display-item="herff")
+					article.portfolioItem(data-display-item="herff")
 						h3 Herff Jones - <a href="http://highschool.herffjones.com">High School Commerce and Ring Designer</a> - E-Commerce site
 						img(src="/images/herff.png",border="0",class="shot")							
 						p A major overhaul for this e-commerce site featuring popular graduation products and a vastly improved ring designer featuring 3D preview and social media integration. I mentored and trained the frontend team, developing style guides, coding standards and best practices. Using a backbone based js framework, I developed key parts of the ring designer, including phone/tablet friendly hide/reveal and animation. To increase engagement I developed the ring gallery with social media integration.
@@ -117,7 +117,7 @@ block content
 							li In the <a href="https://highschool.herffjones.com/secom/rings/home?series=Century&style=Century%20(Oval)&size=XL&gender=Male#/ThreeDIntro">design your ring</a> flow - /scripts/pridesides-helpers.js or stone-helpers.js
 
 
-					article(data-display-item="login")
+					article.portfolioItem(data-display-item="login")
 						h3 Orbitz For Business - <a href="https://www.orbitzforbusiness.net/Secure/OFBSignIn">Login</a> - Business to business commerce
 						img(src="/images/ofb.png",border="0",class="shot")													
 						p One of the shortest and yet most satisfying projects I completed. Orbitz for Business is a highly customised travel site allowing corporate customers to set allowable rates, control preferred carriers and generally manage all aspects of corporate travel. Their employees benefit from a familiar Orbitz search and book experience.

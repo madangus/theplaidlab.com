@@ -72,6 +72,8 @@ thePlaidLabModules.slideshow = {
 		var activeGesture = thePlaidLabModules.slideshow.activeGesture;
 		var movesx = thePlaidLabModules.slideshow.movesx;
 		var movesy = thePlaidLabModules.slideshow.movesy;
+		var endEl = thePlaidLabModules.slideshow.endEl;
+
 		console.log('handleTouch fires! event.type is ' + event.type);
 
 		var touch = event.touches[0];
@@ -88,6 +90,7 @@ thePlaidLabModules.slideshow = {
 			// explcitly setting the object level original. Same treatment in touchmove etc...  
 			movesx[0] = x;
 			movesy[0] = y;
+			thePlaidLabModules.slideshow.startEl = event.target;
 		}
 		
 		if (event.type === 'touchmove') {
@@ -130,19 +133,33 @@ thePlaidLabModules.slideshow = {
 		if (event.type === 'touchend' && activeGesture) {
 			var endMove = (movesx.length - 1);
 			var endx = movesx[endMove];
+			var swipeType;
 
-			var swipeType = (endx - movesx[0]) > horizontalSwipeMinimum ? 'right' : 'left';
+			if ( (movesx[0] - endx) > horizontalSwipeMinimum ) {
+				swipeType = 'left';
+			} else if ( (endx - movesx[0]) > horizontalSwipeMinimum ) {
+				swipeType = 'right';
+			}
 
 			switch (swipeType) {
 				case 'right':
+					console.log('right');
 					thePlaidLabModules.slideshow.moveStage('forward');			
 					break;
 
 				case 'left':
+					console.log('left');
 					thePlaidLabModules.slideshow.moveStage('backward');			
 					break;
 
 			}
+
+			if (thePlaidLabModules.slideshow.startEl = event.target) {
+				// This was a tap, check to see if it was over the nav arrows
+				console.log(event.target);
+
+			}
+
 
 			cleanup();
 		}

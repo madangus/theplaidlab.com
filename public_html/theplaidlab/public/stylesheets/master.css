@@ -122,3 +122,4 @@ main h1,footer h1,main h2,footer h2,main h3,footer h3,main .leader,footer .leade
 footer{background-color:#ddd;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";}
 footer .contact{padding:1.362em 2.129% 0 2.129%;}
 footer .disclaimer{padding:0 2.129% 1.362em 2.129%;}
+* + html .contentColumn,* + html .contentCallout,* + html .bio,* + html .sidebar,* + html .portfolioHeading,* + html #stage,* + html .portfolioItem{display:inline;zoom:1}

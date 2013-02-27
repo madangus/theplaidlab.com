@@ -127,10 +127,16 @@ footer
 		font-size 1rem								
 		line-height 1.5			
 		margin 0 0 1.362em 0						/*  21.801/16 */
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		hyphens: auto;	
 
 	dt,
 	.dt
 		font-weight bold
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		hyphens: auto;	
 
 	h1, 
 	h2, 
@@ -157,8 +163,7 @@ footer
 .formulaIcon
 	font-size 32px
 	font-size 2rem
-	position relative
-	top 0.75em
+	float left
 
 	&.html
 		color blue
@@ -243,9 +248,15 @@ footer
 		.formulaIcon
 			margin-right 4.092%						/* 16/391 */
 
+		dd
+			margin-bottom 1.5em		
+
+		dd:nth-child(3n)
+			margin-bottom 0
+
 		dd,
 		.oo
-			margin-left 14.596% 					/* 57.073/391 */
+			margin-left 12.750% 					/* 57.073/391 */
 
 		.ooContainer
 			margin 0

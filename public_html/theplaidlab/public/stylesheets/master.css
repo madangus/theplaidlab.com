@@ -80,13 +80,13 @@ main h1,footer h1,main .h1,footer .h1{display:inline-block;font-family:"ff-cocon
 main h2,footer h2,main .h2,footer .h2{font-family:ff-cocon-web-pro;font-size:32px;font-size:2rem;line:height 1;margin:0 0 .809em 0;}
 main h3,footer h3,main .h3,footer .h3{font-size:18px;font-size:1.125rem;line-height:1;margin:1.211em 0;}
 main h4,footer h4,main .h4,footer .h4{font-size:18px;font-size:1.125rem;font-style:italic;margin:1.125em 0 .5em 0}
-main p,footer p,main .p,footer .p{font-size:16px;font-size:1rem;line-height:1.5;margin:0 0 1.362em 0;}
-main dt,footer dt,main .dt,footer .dt{font-weight:bold}
+main p,footer p,main .p,footer .p{font-size:16px;font-size:1rem;line-height:1.5;margin:0 0 1.362em 0;-webkit-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;-moz-hyphens:auto;-ms-hyphens:auto;hyphens:auto}
+main dt,footer dt,main .dt,footer .dt{font-weight:bold;-webkit-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;-moz-hyphens:auto;-ms-hyphens:auto;hyphens:auto}
 main h1,footer h1,main h2,footer h2,main h3,footer h3,main .leader,footer .leader{text-rendering:optimizeLegibility}
 .intro{margin-bottom:0}
 .thoughts .points{margin-top:0}
 .hide,*[data-module="slideshow"] *[data-control].hide{display:none}
-.formulaIcon{font-size:32px;font-size:2rem;position:relative;top:.75em;}
+.formulaIcon{font-size:32px;font-size:2rem;float:left;}
 .formulaIcon.html{color:#00f}
 .formulaIcon.js{color:#f00}
 .formulaIcon.css{color:#008000}
@@ -107,7 +107,9 @@ main h1,footer h1,main h2,footer h2,main h3,footer h3,main .leader,footer .leade
 .sidebar .primaryNav{margin-bottom:2.75em;}
 .sidebar .webFormula{border:solid 2px #000;margin-top:7.812em;}
 .sidebar .webFormula .formulaIcon{margin-right:4.092%;}
-.sidebar .webFormula dd,.sidebar .webFormula .oo{margin-left:14.596%;}
+.sidebar .webFormula dd{margin-bottom:1.5em}
+.sidebar .webFormula dd:nth-child(3n){margin-bottom:0}
+.sidebar .webFormula dd,.sidebar .webFormula .oo{margin-left:12.75%;}
 .sidebar .webFormula .ooContainer{margin:0;}
 .sidebar .webFormula .ooContainer .icon-info{color:#00f;font-size:2rem;position:relative;top:1.5em}
 .behindTheCurtain,.currentExperiments,.portfolio{background-color:#ddd;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";margin:4.235em 0;padding:1.362em 2.129%;}

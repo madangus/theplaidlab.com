@@ -27,7 +27,6 @@ var thePlaidLab = (function() {
 }());
 
 
-
 (function plaidMasterInit() {
 	console.log('plaidMasterInit runs');
 	// Check to see if jquery and all our custom stuff is ready
@@ -37,7 +36,7 @@ var thePlaidLab = (function() {
 			thePlaidLab.init();
 		});						
 	} else {
-		console.log('no jquery yet');
+		console.log('All scripts not loaded.');
 		window.setTimeout(plaidMasterInit, 10);					
 	}	
 					

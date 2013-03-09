@@ -77,7 +77,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,secti
 html{background:#eee url("/images/domAtDesk.png") no-repeat top center fixed;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover}
 main,footer{font-family:"myriad-pro","Arial",sans-serif;font-size:1rem;line-height:1.5;margin:16px auto;max-width:94%;padding:0;width:64em;}
 main h1,footer h1,main .h1,footer .h1{display:inline-block;font-family:"ff-cocon-web-pro","Helvetica",sans-serif;font-size:80px;font-size:5rem;line-height:1.5;margin:.446em 0;}
-main h2,footer h2,main .h2,footer .h2{font-family:ff-cocon-web-pro;font-size:32px;font-size:2rem;line:height 1;margin:0 0 .809em 0;}
+main h2,footer h2,main .h2,footer .h2{font-family:"ff-cocon-web-pro","Helvetica",sans-serif;font-size:32px;font-size:2rem;line:height 1;margin:0 0 .809em 0;}
 main h3,footer h3,main .h3,footer .h3{font-size:18px;font-size:1.125rem;line-height:1;margin:1.211em 0;}
 main h4,footer h4,main .h4,footer .h4{font-size:18px;font-size:1.125rem;font-style:italic;margin:1.125em 0 .5em 0}
 main p,footer p,main .p,footer .p{font-size:16px;font-size:1rem;line-height:1.5;margin:0 0 1.362em 0;-webkit-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;-moz-hyphens:auto;-ms-hyphens:auto;hyphens:auto}

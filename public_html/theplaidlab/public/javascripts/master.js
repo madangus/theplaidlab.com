@@ -28,18 +28,19 @@ var thePlaidLab = (function() {
 
 
 
-(function masterInit($) {
+(function plaidMasterInit() {
+	console.log('plaidMasterInit runs');
 	// Check to see if jquery and all our custom stuff is ready
 	// NOTE: Fairly soon I'll be switching js delivery over to require.js or similar, so this cheap and cheerful dependency mgmt will then be gone
-	if (window.$ && thePlaidLab && thePlaidLabModules) {
+	if (typeof $ !== 'undefined' && typeof thePlaidLab !== 'undefined' && typeof thePlaidLabModules !== 'undefined') {
 		$(document).ready(function() {
 			thePlaidLab.init();
 		});						
 	} else {
 		console.log('no jquery yet');
-		window.setTimeout(masterInit, 20);					
+		window.setTimeout(plaidMasterInit, 10);					
 	}	
 					
-}(jQuery));	// masterInit
+}());	// plaidMasterInit
 
 

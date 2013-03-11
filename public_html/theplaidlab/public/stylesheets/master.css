@@ -121,7 +121,8 @@ main h1,footer h1,main h2,footer h2,main h3,footer h3,main .leader,footer .leade
 .sidebar .webFormula dd,.sidebar .webFormula .oo{margin-left:12.75%;}
 .sidebar .webFormula .ooContainer{margin:0;}
 .sidebar .webFormula .ooContainer .icon-info{color:#00f;font-size:2rem;position:relative;top:1.5em}
-.behindTheCurtain,.currentExperiments,.portfolio{background-color:#ddd;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";margin:4.235em 0;padding:1.362em 2.129%;}
+.portfolio,.behindTheCurtain,.currentExperiments{background-color:#ddd;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";margin:4.235em 0;}
+.currentExperiments,.portfolio{padding:1.362em 2.129%;}
 .skillBucket{margin-top:4.6em}
 .portfolio h3{margin-top:0}
 .portfolio ul,.portfolio .ul{margin:1.362em 0 1.362em 0;}

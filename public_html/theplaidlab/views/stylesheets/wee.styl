@@ -4,21 +4,40 @@
 */
 
 @media screen and (max-width: 40em)
-	.container,
+	.container
+		width 99%
+
 	.bio,
 	.sidebar,
 	.contentColumn,
 	.contentCallout
 		display block
-		margin-left auto
-		margin-right auto
-		width 96%
+		width 92%
 
+	.sidebar
+		margin-left 0
+		width 90%
+
+	.behindTheCurtain
+		padding 1.362em 2.129%		
+
+	.currentExperiments
+		padding 1.362em 4%		
+	
 	.skillBucket
 		margin-top 0
 
 	*[data-module="slideshow"]
 		overflow none
+		width 95%
+
+		.swipeNav
+			display none
+
+		[data-control="stage"],
+		.itemsWrapper
+			margin-left 0
+			width 100%
 
 		.portfolioHeading,
 		.mobileNav
@@ -28,11 +47,10 @@
 		.swipeNav		
 			display none
 		
-		article
+		.portfolioItem
 			display block
-
-		*[data-display-item]
-			display block
-
+			margin-left 0
+			margin-right 0
+			width 99%
 
 

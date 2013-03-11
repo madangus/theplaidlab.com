@@ -281,7 +281,12 @@ footer
 		color #fff
 
 
-/* intro */
+/* main content bio, sidebar, current stuff 
+	There was some nav above the web formula before that may come back
+	Note, the width overrides for bio and sidebar.. since the contentColumn and Callout is more general (though I'll be
+		looking at that again)
+*/
+
 
 .bio,
 .sidebar
@@ -334,17 +339,22 @@ footer
 				top 1.5em			
 
 
+.portfolio,
 .behindTheCurtain,
-.currentExperiments,
-.portfolio
-	background-color #ddd	
+.currentExperiments
+	background-color #ddd
 	opacity 0.9
 	margin 4.235em 0							/* v: 67.773/16 */
+
+
+/* If the padding doesn't come from contentColumn/contentCallout */
+.currentExperiments,
+.portfolio
 	padding 1.362em 2.129%						/* v: 21.801/16  h: 21.801/1024 */
+
 
 .skillBucket 
 	margin-top 4.6em
-
 
 
 /* portfolio */

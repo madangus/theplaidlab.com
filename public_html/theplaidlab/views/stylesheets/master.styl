@@ -127,9 +127,17 @@ footer
 		font-size 1rem								
 		line-height 1.5			
 		margin 0 0 1.362em 0						/*  21.801/16 */
-		-webkit-hyphens: auto;
-		-moz-hyphens: auto;
-		hyphens: auto;	
+		text-align justify
+		-webkit-hyphens auto
+		-moz-hyphens auto
+		hyphens auto	
+		-ms-hyphenate-limit-lines 2
+		-webkit-hyphenate-limit-lines 2
+		hyphenate-limit-lines 2
+		-ms-hyphenate-limit-chars 6 3 2
+		-webkit-hyphenate-limit-chars 6 3 2
+		hyphenate-limit-chars 6 3 2
+
 
 	dt,
 	.dt
@@ -335,7 +343,7 @@ footer
 /* ie 7 */
 
 * + html .contentColumn,
-* + html .contentCallout 
+* + html .contentCallout, 
 * + html .bio,
 * + html .sidebar,
 * + html .portfolioHeading,

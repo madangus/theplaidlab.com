@@ -80,7 +80,7 @@ main h1,footer h1,main .h1,footer .h1{display:inline-block;font-family:"ff-cocon
 main h2,footer h2,main .h2,footer .h2{font-family:"ff-cocon-web-pro","Helvetica",sans-serif;font-size:32px;font-size:2rem;line:height 1;margin:0 0 .809em 0;}
 main h3,footer h3,main .h3,footer .h3{font-size:18px;font-size:1.125rem;line-height:1;margin:1.211em 0;}
 main h4,footer h4,main .h4,footer .h4{font-size:18px;font-size:1.125rem;font-style:italic;margin:1.125em 0 .5em 0}
-main p,footer p,main .p,footer .p{font-size:16px;font-size:1rem;line-height:1.5;margin:0 0 1.362em 0;-webkit-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;-moz-hyphens:auto;-ms-hyphens:auto;hyphens:auto}
+main p,footer p,main .p,footer .p{font-size:16px;font-size:1rem;line-height:1.5;margin:0 0 1.362em 0;text-align:justify;-webkit-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;-moz-hyphens:auto;-ms-hyphens:auto;hyphens:auto;-ms-hyphenate-limit-lines:2;-webkit-hyphenate-limit-lines:2;hyphenate-limit-lines:2;-ms-hyphenate-limit-chars:6 3 2;-webkit-hyphenate-limit-chars:6 3 2;hyphenate-limit-chars:6 3 2}
 main dt,footer dt,main .dt,footer .dt{font-weight:bold;-webkit-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;-moz-hyphens:auto;-ms-hyphens:auto;hyphens:auto}
 main h1,footer h1,main h2,footer h2,main h3,footer h3,main .leader,footer .leader{text-rendering:optimizeLegibility}
 .intro{margin-bottom:0}

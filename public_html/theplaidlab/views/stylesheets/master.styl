@@ -153,32 +153,7 @@ footer
 		text-rendering optimizeLegibility 
 
 
-
-/* wee utility beasties */
-
-.intro
-	margin-bottom 0
-
-.thoughts .points
-	margin-top 0
-
-.hide,
-*[data-module="slideshow"] *[data-control].hide
-	display none
-
-/* icons */
-
-.formulaIcon
-	font-size 32px
-	font-size 2rem
-	float left
-
-	&.html
-		color blue
-	&.js
-		color red
-	&.css
-		color green
+/* ----------------------- EXTRACT TO CROSS SITE SHARED ---------------------------------- */
 
 /* 2 col 
 * contentCol on left, contentCallouts on right
@@ -206,21 +181,104 @@ footer
 	width $contentCalloutWidth
 
 
+/* slideshow */
+
+*[data-module="slideshow"]
+	opacity 1
+	position relative		
+
+	.swipeNav
+		display none
+
+	.portfolioHeading
+		display inline-block
+
+	*[data-control="stage"]
+		display inline-block
+		margin-left 2.750em
+		overflow hidden
+		width 91.796%							/* 940/1024 */ 
+
+	.itemsWrapper
+		transition 0.5s all linear		
+		width 500%								/* 4700/940 (Desired size is number of items * length of each item including margin) */
+
+	*[data-control="navigate"]
+		color blue
+		cursor pointer
+		display block
+		font-size 2rem
+		position absolute
+
+		&.backwardTop
+			top 8%
+			left 3%
+		
+		&.forwardTop
+			top 8%
+			left 94%
+
+		&.backwardBottom
+			top 94%
+			left 3%
+		
+		&.forwardBottom
+			top 94%
+			left 94%
+
+
+	*[data-display-item]
+		display inline-block
+		margin 0 0.425%							/* 20/4700 */
+		vertical-align top
+		width 19.148%							/* 900/4700  */		
+
+	*[data-control="pager"]
+		clear both
+		
+/* -------------------- END EXTRACT TO CROSS SITE SHARED ---------------------------------- */
+
+
+
+/* Lab specific */
+
+
+/* wee utility beasties */
+
+.intro
+	margin-bottom 0
+
+.thoughts .points
+	margin-top 0
+
+.hide,
+*[data-module="slideshow"] *[data-control].hide
+	display none
+
+
+/* icons */
+
+.formulaIcon
+	font-size 32px
+	font-size 2rem
+	float left
+
+	&.html
+		color blue
+	&.js
+		color red
+	&.css
+		color green
+
+
 /* title */
 
 #labTitle
 	width 80%
-	.the
-		color white
-	.plaid
-		color white
+	.the,
+	.plaid,
 	.lab
-		color white
-
-
-/* wee mobile content */	
-#weeMobileContent
-	display none
+		color #fff
 
 
 /* intro */
@@ -288,6 +346,7 @@ footer
 	margin-top 4.6em
 
 
+
 /* portfolio */
 
 .portfolio
@@ -321,6 +380,7 @@ footer
 
 	.inspect
 		margin-top 0
+
 
 
 /* footer */

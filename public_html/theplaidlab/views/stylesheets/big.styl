@@ -1,57 +1,7 @@
 /* Styles for laptop/desktop */
 
-@media all and (min-width: 48.5em) 
+@media all and (min-width: 64.5em) 
+	/* clumsy kludge but will do for now */
+	.swipeNav
+		display none
 
-	*[data-module="slideshow"]
-		opacity 1
-		position relative		
-
-		.swipeNav
-			display none
-
-		.portfolioHeading
-			display inline-block
-
-		*[data-control="stage"]
-			display inline-block
-			margin-left 2.750em
-			overflow hidden
-			width 91.796%							/* 940/1024 */ 
-
-		.itemsWrapper
-			transition 0.5s all linear		
-			width 500%								/* 4700/940 (Desired size is number of items * length of each item including margin) */
-
-		*[data-control="navigate"]
-			color blue
-			cursor pointer
-			display block
-			font-size 2rem
-			position absolute
-
-			&.backwardTop
-				top 8%
-				left 3%
-			
-			&.forwardTop
-				top 8%
-				left 94%
-
-			&.backwardBottom
-				top 94%
-				left 3%
-			
-			&.forwardBottom
-				top 94%
-				left 94%
-
-
-		*[data-display-item]
-			display inline-block
-			margin 0 0.425%							/* 20/4700 */
-			vertical-align top
-			width 19.148%							/* 900/4700  */		
-
-		*[data-control="pager"]
-			clear both
-			

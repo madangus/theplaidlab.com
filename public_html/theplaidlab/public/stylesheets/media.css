@@ -1,20 +1,15 @@
-@media screen and and (min-width: 10em) and (max-width: 22.5em){.bio,.webFormula{display:block;width:100%}
-#weeMobileContent{display:block}
-article{display:block}
+@media screen and (max-width: 40em){.container,.bio,.sidebar,.contentColumn,.contentCallout{display:block;margin-left:auto;margin-right:auto;width:96%}
+.skillBucket{margin-top:0}
 *[data-module="slideshow"]{overflow:none;}
 *[data-module="slideshow"] .portfolioHeading,*[data-module="slideshow"] .mobileNav{display:inline-block}
-*[data-module="slideshow"] *[data-control="navigate"]{display:none}
+*[data-module="slideshow"] *[data-control="navigate"],*[data-module="slideshow"] .swipeNav{display:none}
 *[data-module="slideshow"] article{display:block}
 *[data-module="slideshow"] *[data-display-item]{display:block}
-}@media screen and (min-width: 22.6em) and (max-width: 40em){#weeMobileContent{display:block}
-*[data-module="slideshow"] .portfolioHeading,*[data-module="slideshow"] .mobileNav{display:inline-block}
-*[data-module="slideshow"] *[data-control="navigate"]{display:none}
-}@media all and (max-width: 48em){#weeMobileContent{display:none}
-.tinkering,.stage{display:block}
+}@media all and (min-width: 40em) and (max-width: 48em){.tinkering,.stage{display:block}
 *[data-module="slideshow"] .portfolioHeading,*[data-module="slideshow"] .swipeNav{display:inline-block}
 *[data-module="slideshow"] .swipeNav{margin-left:14.648%;}
 *[data-module="slideshow"] *[data-control="navigate"]{display:none}
-}*[data-module="slideshow"]{opacity:1;position:relative;}
+}@media all and (min-width: 48.5em){*[data-module="slideshow"]{opacity:1;position:relative;}
 *[data-module="slideshow"] .swipeNav{display:none}
 *[data-module="slideshow"] .portfolioHeading{display:inline-block}
 *[data-module="slideshow"] *[data-control="stage"]{display:inline-block;margin-left:2.75em;overflow:hidden;width:91.796%;}
@@ -26,3 +21,4 @@ article{display:block}
 *[data-module="slideshow"] *[data-control="navigate"].forwardBottom{top:94%;left:94%}
 *[data-module="slideshow"] *[data-display-item]{display:inline-block;margin:0 .425%;vertical-align:top;width:19.148%;}
 *[data-module="slideshow"] *[data-control="pager"]{clear:both}
+}

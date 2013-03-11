@@ -3,17 +3,19 @@
 *		360/16
 */
 
-@media screen and and (min-width: 10em) and (max-width: 22.5em)
+@media screen and (max-width: 40em)
+	.container,
 	.bio,
-	.webFormula
+	.sidebar,
+	.contentColumn,
+	.contentCallout
 		display block
-		width 100%
+		margin-left auto
+		margin-right auto
+		width 96%
 
-	#weeMobileContent
-		display block
-
-	article
-		display block
+	.skillBucket
+		margin-top 0
 
 	*[data-module="slideshow"]
 		overflow none
@@ -22,7 +24,8 @@
 		.mobileNav
 			display inline-block
 
-		*[data-control="navigate"]		
+		*[data-control="navigate"],
+		.swipeNav		
 			display none
 		
 		article
@@ -32,23 +35,4 @@
 			display block
 
 
-
-
-/* Styles for mobile landscape 
-*		max-width 540px	
-*		640/16
-*/
-
-
-@media screen and (min-width: 22.6em) and (max-width: 40em) 
-	#weeMobileContent
-		display block
-
-	*[data-module="slideshow"]
-		.portfolioHeading,
-		.mobileNav
-			display inline-block
-
-		*[data-control="navigate"]
-			display none
 

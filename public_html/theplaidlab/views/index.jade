@@ -98,20 +98,20 @@ block content
 
 					article.portfolioItem(data-display-item="herff")
 						h3 Herff Jones - <a href="http://highschool.herffjones.com">High School Commerce and Ring Designer</a> - E-Commerce site
-						img(src="/images/herff.png",border="0",class="shot",alt="screenshot")							
+						img(src="/images/herff.png",class="shot",alt="screenshot")							
 						p A major overhaul for this e-commerce site featuring popular graduation products and a vastly improved ring designer featuring 3D preview and social media integration. I mentored and trained the frontend team, developing style guides, coding standards and best practices. Using a backbone based js framework, I developed key parts of the ring designer, including phone/tablet friendly hide/reveal and animation. To increase engagement I developed the ring gallery with social media integration.
 						p As the release approached, I made some final, safe improvements to various aspects of the site*, completed documentation and supported the transition to a small extended maintainance team.
 						p * Refactoring is wonderful, but a few weeks from release, often a deep breath is in order. It can be hard for a developer who cares, to step back. However, performing small and targeted improvements of the most value is the best for everyone close to final release. 
 
 						ul.tech
 							li Built with JSP via the Adobe CQ based backend, Twitter Bootstrap framework and for the ring designer - 1 page backbone based js and Flash.
-							li Used a somewhat tweaked implementation of the <a href="http://books.google.com/books?id=WTZqecc9olUC&lpg=PA103&ots=KaHvSkmKXt&dq=js%20sandbox%20pattern&pg=PA103#v=onepage&q=js%20sandbox%20pattern&f=false">sandbox pattern</a> to provide organization, easier debugging and reuse for the non-ring site js.
+							li Used a somewhat tweaked implementation of the <a href="http://books.google.com/books?id=WTZqecc9olUC&amp;lpg=PA103&amp;ots=KaHvSkmKXt&amp;dq=js%20sandbox%20pattern&amp;pg=PA103#v=onepage&amp;q=js%20sandbox%20pattern&amp;f=false">sandbox pattern</a> to provide organization, easier debugging and reuse for the non-ring site js.
 							li An essentials only build of Bootstrap with OO CSS patterns to provide robust, cohesive styling without a labyrinth of floats (tables by another name when in excess, I fear). (Last checked Feb 2013).
 
 						h4 Inspect some samples of my code on this site (last checked Feb 2013):
 						ul.inspect
 							li On the home page - /scripts/hjMasterScriptContainer.js or hjRingWall.js should be visible using your browser development tools.
-							li In the <a href="https://highschool.herffjones.com/secom/rings/home?series=Century&style=Century%20(Oval)&size=XL&gender=Male#/ThreeDIntro">design your ring</a> flow - /scripts/pridesides-helpers.js or stone-helpers.js
+							li In the <a href="https://highschool.herffjones.com/secom/rings/home?series=Century&amp;style=Century%20(Oval)&amp;size=XL&amp;gender=Male#/ThreeDIntro">design your ring</a> flow - /scripts/pridesides-helpers.js or stone-helpers.js
 
 
 					article.portfolioItem(data-display-item="login")
@@ -123,7 +123,7 @@ block content
 
 						ul.tech
 							li Reduced several css and js http requests to a single js call for the essential webtrends.
-							li Abstracted a core set of minimal styles and moved them to the <head> of the page, usually an anti-pattern but in this case, it vastly reduced the style weight of the page and removed the overhead of an additional http request.
+							li Abstracted a core set of minimal styles and moved them to the -head- of the page, usually an anti-pattern but in this case, it vastly reduced the style weight of the page and removed the overhead of an additional http request.
 							li Eliminated several rounded corner background images and such, bringing the design in line with the modern Orbitz feel.
 							li Raised the YSlow score from a C to an A, making each page load several hundred kb lighter. This adds up significantly when scaled to 160,000 requests per month.
 

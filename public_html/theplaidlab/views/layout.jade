@@ -16,6 +16,22 @@ html
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		<!-- end typekit -->
 
+
+		<!-- goog analytics -->
+		script
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-39685260-2']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+		<!-- end goog analytics -->
+
+
 		script
 			// For debugging this gets output later
 			var lWidth = document.documentElement.clientWidth;

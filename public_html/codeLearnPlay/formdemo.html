@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+		<!--[if lte IE 9]>
+		<script>
+		document.createElement('header');
+		document.createElement('nav');
+		document.createElement('article');
+		document.createElement('footer');
+		</script>
+		<![endif]-->
+		
+		<style>
+			body {
+				font-size: 100%;
+				padding: 2%;
+			}
+
+			main,
+			.primary-form label,
+			.primary-form input,
+			.primary-form select {
+				font-size: 1.2rem;
+			}
+
+			.primary-form .part {
+				display: inline-block;
+				margin: 6px;
+			}
+
+			.primary-form .part label {
+				display: block;
+				margin-bottom: 6px;
+			}
+
+			#zip {
+				max-length: 5;
+				width: 80px;
+			}
+
+			#search {
+				max-length: 30;
+				width: 280px;				
+			}
+
+			button {
+				height: 24px;
+				width: 92px;
+			}
+
+			.primary-form .bottom {
+				opacity: 0.5;
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+		<main>
+			<form class="primary-form">
+				<div class="top">
+					<div class="part">
+						<label for="make">Manufacturer</label>
+						<select id="make">
+							<option value="">Chevrolet</option>
+							<option value="Toyota">Toyota</option>
+						</select>
+					</div>
+
+					<div class="part">
+						<label for="model">Model</label>
+						<select id="model">
+							<option value="Wee">Wee</option>
+							<option value="Mid-size">Mid-size</option>
+						</select>
+					</div>
+
+					<div class="part">
+						<label for="year">Year</label>
+						<select id="year">
+							<option value="2012">2012</option>
+							<option value="2011">2011</option>
+							<option value="2010">2010</option>
+						</select>
+					</div>
+
+					<div class="part">
+						<label for="zip">ZIP</label>
+						<input type="text" maxlength="5" id="zip" />
+					</div>
+				</div>
+
+				<div class="bottom">
+					<div class="part">
+						<input type="text" id="search" disabled="disabled" />
+					</div>
+
+					<button disabled="disabled">Search</button>
+				</div>
+
+			</form>
+		</main>
+	</body>
+
+	<script>
+		var formDemo = (function() {
+			return {
+				registerHandlers: function() {
+					$('#zip').on('keyup', function() {
+						formDemo.checkZip( $(this).val() );
+					});
+				},
+				checkZip: function(val) {
+					console.log(val);
+				},
+				init: function() {
+					console.log('formDemo init');
+					formDemo.registerHandlers();
+				}
+			};
+		}());
+
+
+		(function formDemoMasterInit() {
+			if (typeof $ !== 'undefined' && typeof formDemo !== 'undefined') {
+				$(document).ready(function() {
+					formDemo.init();
+				});						
+			} else {
+				console.log('no jquery yet');
+				window.setTimeout(formDemoMasterInit, 10);					
+			}	
+							
+		}());
+
+	</script>
+
+</html>

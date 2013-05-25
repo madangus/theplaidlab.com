@@ -8,7 +8,7 @@ var thePlaidLab = (function() {
 	}
 
 	function registerHandlers() {
-		console.log('registering handlers');
+		//console.log('registering handlers');
 
 		$(window).resize(function() {
 			//debugBreakpoints();
@@ -18,7 +18,7 @@ var thePlaidLab = (function() {
 
 	return {
 		init: function() {
-			console.log('theplaidlab init');
+			//console.log('theplaidlab init');
 			//debugBreakpoints();
 			registerHandlers();
 			thePlaidLabModules.slideshow.init();
@@ -36,7 +36,7 @@ var thePlaidLab = (function() {
 			thePlaidLab.init();
 		});						
 	} else {
-		console.log('All scripts not loaded.');
+		//console.log('All scripts not loaded.');
 		window.setTimeout(plaidMasterInit, 10);					
 	}	
 					

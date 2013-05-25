@@ -8,11 +8,11 @@ var thePlaidLabModules = thePlaidLabModules || {};
 
 thePlaidLabModules.slideshow = {
 	init: function() {
-		console.log('lets set up the slideshow');
+		//console.log('lets set up the slideshow');
 		var rawWidth = $('*[data-module="slideshow"] *[data-control="stage"]').first().width();
 		this.stageWidth = parseInt(rawWidth);
 		this.itemsCount = ( $('*[data-module="slideshow"] *[data-display-item]') ).length;
-		console.log('stage width: ' + this.stageWidth + '. Items ' + this.itemsCount);
+		//console.log('stage width: ' + this.stageWidth + '. Items ' + this.itemsCount);
 		this.currentItem = 1;
 		this.stagePos = 0;
 		this.registerHandlers();
@@ -74,7 +74,7 @@ thePlaidLabModules.slideshow = {
 		var movesy = thePlaidLabModules.slideshow.movesy;
 		var endEl = thePlaidLabModules.slideshow.endEl;
 
-		console.log('handleTouch fires! event.type is ' + event.type);
+		//console.log('handleTouch fires! event.type is ' + event.type);
 
 		var touch = event.touches[0];
 		var numTouches = event.touches.length;			
@@ -96,7 +96,7 @@ thePlaidLabModules.slideshow = {
 		if (event.type === 'touchmove') {
 			if (numTouches === 1 && activeGesture) {
 				if ( Math.abs(movesy[0] - y) > verticalSwipeMinimum || Math.abs(y - movesy[0]) > verticalSwipeMinimum ) {
-					console.log('swiping up or down exiting');
+					//console.log('swiping up or down exiting');
 					thePlaidLabModules.slideshow.activeGesture = false;
 				} else {
 					movesx.push(x);
@@ -143,12 +143,12 @@ thePlaidLabModules.slideshow = {
 
 			switch (swipeType) {
 				case 'right':
-					console.log('right');
+					//console.log('right');
 					thePlaidLabModules.slideshow.moveStage('forward');			
 					break;
 
 				case 'left':
-					console.log('left');
+					//console.log('left');
 					thePlaidLabModules.slideshow.moveStage('backward');			
 					break;
 
@@ -156,7 +156,7 @@ thePlaidLabModules.slideshow = {
 
 			if (thePlaidLabModules.slideshow.startEl = event.target) {
 				// This was a tap, check to see if it was over the nav arrows
-				console.log(event.target);
+				//console.log(event.target);
 
 			}
 
@@ -205,7 +205,7 @@ thePlaidLabModules.slideshow = {
 				scrollxPx = '-' + scrollx + 'px';
 			}
 
-			console.log(dir + ' to ' + scrollxPx);
+			//console.log(dir + ' to ' + scrollxPx);
 			var $wrapper = $('*[data-control="stage"]').find('.itemsWrapper').first(); 
 			$wrapper.css("margin-left",scrollxPx);
 			this.stagePos = scrollx;

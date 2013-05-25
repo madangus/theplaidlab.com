@@ -28,7 +28,7 @@ var thePlaidLab = (function() {
 
 
 (function plaidMasterInit() {
-	console.log('plaidMasterInit runs');
+	//console.log('plaidMasterInit runs');
 	// Check to see if jquery and all our custom stuff is ready
 	// NOTE: Fairly soon I'll be switching js delivery over to require.js or similar, so this cheap and cheerful dependency mgmt will then be gone
 	if (typeof $ !== 'undefined' && typeof thePlaidLab !== 'undefined' && typeof thePlaidLabModules !== 'undefined') {

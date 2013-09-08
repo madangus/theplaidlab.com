@@ -9,9 +9,9 @@ var thePlaidLabModules = thePlaidLabModules || {};
 thePlaidLabModules.slideshow = {
 	init: function() {
 		//console.log('lets set up the slideshow');
-		var rawWidth = $('*[data-module="slideshow"] *[data-control="stage"]').first().width();
+		var rawWidth = $('[data-module="slideshow"] [data-control="stage"]').first().width();
 		this.stageWidth = parseInt(rawWidth);
-		this.itemsCount = ( $('*[data-module="slideshow"] *[data-display-item]') ).length;
+		this.itemsCount = ( $('[data-module="slideshow"] [data-display-item]') ).length;
 		//console.log('stage width: ' + this.stageWidth + '. Items ' + this.itemsCount);
 		this.currentItem = 1;
 		this.stagePos = 0;
@@ -21,15 +21,15 @@ thePlaidLabModules.slideshow = {
 	},
 	displayNav: function() {
 		if (this.currentItem === 1) {
-			$('*[data-module="slideshow"] *[data-action="backward"]').addClass('hide');
+			$('[data-module="slideshow"] [data-action="backward"]').addClass('hide');
 		} else {
-			$('*[data-module="slideshow"] *[data-action="backward"]').removeClass('hide');
+			$('[data-module="slideshow"] [data-action="backward"]').removeClass('hide');
 		}
 
 		if (this.currentItem === this.itemsCount) {
-			$('*[data-module="slideshow"] *[data-action="forward"]').addClass('hide');
+			$('[data-module="slideshow"] [data-action="forward"]').addClass('hide');
 		} else {
-			$('*[data-module="slideshow"] *[data-action="forward"]').removeClass('hide');
+			$('[data-module="slideshow"] [data-action="forward"]').removeClass('hide');
 		}
 	},	
 	registerHandlers: function() {
@@ -42,8 +42,8 @@ thePlaidLabModules.slideshow = {
 			}
 		});
 
-		if ( $('*[data-module="slideshow"] *[data-control="navigate"]').length ) {
-			$('*[data-module="slideshow"]').on('click', '*[data-control="navigate"]', function(event) {
+		if ( $('[data-module="slideshow"] [data-control="navigate"]').length ) {
+			$('[data-module="slideshow"]').on('click', '[data-control="navigate"]', function(event) {
 				var dir = $(this).attr("data-action");
 				if (dir && $(this).css('display') !== 'none') {
 					thePlaidLabModules.slideshow.moveStage(dir);
@@ -53,7 +53,7 @@ thePlaidLabModules.slideshow = {
 	},
 	setupTouchSupport: function() {
 		if (typeof document.querySelector === 'function') {
-			var target = document.querySelector('*[data-module="slideshow"]');
+			var target = document.querySelector('[data-module="slideshow"]');
 			
 			// Set these working vars here so they retain values on multiple handleTouch invocations
 			this.activeGesture = null;
@@ -206,7 +206,7 @@ thePlaidLabModules.slideshow = {
 			}
 
 			//console.log(dir + ' to ' + scrollxPx);
-			var $wrapper = $('*[data-control="stage"]').find('.itemsWrapper').first(); 
+			var $wrapper = $('[data-control="stage"]').find('.itemsWrapper').first(); 
 			$wrapper.css("margin-left",scrollxPx);
 			this.stagePos = scrollx;
 		}

@@ -5,12 +5,10 @@
 .currentExperiments{padding:1.362em 4%}
 .skillBucket{margin-top:0}
 *[data-module="slideshow"]{overflow:none;width:95%;}
-*[data-module="slideshow"] .swipeNav{display:none}
 *[data-module="slideshow"] [data-control="stage"],*[data-module="slideshow"] .itemsWrapper{margin-left:0;width:100%}
 *[data-module="slideshow"] .portfolioHeading,*[data-module="slideshow"] .mobileNav{display:inline-block}
-*[data-module="slideshow"] *[data-control="navigate"],*[data-module="slideshow"] .swipeNav{display:none}
+*[data-module="slideshow"] *[data-control="navigate"]{display:none}
 *[data-module="slideshow"] .portfolioItem{display:block;margin-left:0;margin-right:0;width:99%}
-}@media all and (min-width: 40em) and (max-width: 48em){*[data-module="slideshow"] .portfolioHeading,*[data-module="slideshow"] .swipeNav{display:inline-block}
+}@media all and (min-width: 40em) and (max-width: 48em){*[data-module="slideshow"] .portfolioHeading{display:inline-block}
 *[data-module="slideshow"] .swipeNav{margin-left:14.648%;}
-}@media all and (min-width: 64.5em){.swipeNav{display:none}
 }

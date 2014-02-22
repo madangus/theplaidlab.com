@@ -8,7 +8,7 @@ var thePlaidLab = (function() {
 	}
 
 	function registerHandlers() {
-		//console.log('registering handlers');
+		console.log('registering handlers');
 
 		$(window).resize(function() {
 			//debugBreakpoints();
@@ -18,8 +18,24 @@ var thePlaidLab = (function() {
 
 	return {
 		init: function() {
-			//console.log('theplaidlab init');
+			if (typeof window.console === undefined) {
+				window.console = {};
+				window.console.log = function() {
+				};
+			}
+
+			console.log('theplaidlab init');
+			
 			//debugBreakpoints();
+
+			// For older ie
+			document.createElement('article');
+			document.createElement('aside');
+			document.createElement('footer');
+			document.createElement('header');
+			document.createElement('main');			
+			document.createElement('nav');
+
 			registerHandlers();
 			thePlaidLabModules.slideshow.init();
 		}

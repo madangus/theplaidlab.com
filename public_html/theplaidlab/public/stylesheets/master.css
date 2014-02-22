@@ -83,7 +83,7 @@ main h4,footer h4,main .h4,footer .h4{font-size:18px;font-size:1.125rem;font-sty
 main p,footer p,main .p,footer .p{font-size:16px;font-size:1rem;line-height:1.5;margin:0 0 1.362em 0;text-align:justify;-webkit-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;-moz-hyphens:auto;-ms-hyphens:auto;hyphens:auto;-ms-hyphenate-limit-lines:2;-webkit-hyphenate-limit-lines:2;hyphenate-limit-lines:2;-ms-hyphenate-limit-chars:6 3 2;-webkit-hyphenate-limit-chars:6 3 2;hyphenate-limit-chars:6 3 2}
 main dt,footer dt,main .dt,footer .dt{font-weight:bold;-webkit-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;-moz-hyphens:auto;-ms-hyphens:auto;hyphens:auto}
 main h1,footer h1,main h2,footer h2,main h3,footer h3,main .leader,footer .leader{text-rendering:optimizeLegibility}
-.contentColumn,.contentCallout{background-color:#ddd;display:inline-block;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";padding:1.362em 2.129%;vertical-align:top}
+.contentColumn,.contentCallout{background-color:#ddd;display:inline-block;opacity:.9;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";filter:alpha(opacity=90);padding:1.362em 2.129%;vertical-align:top}
 .contentColumn{margin-right:6.614%;width:42.578%;}
 .contentColumn .leader{font-size:19px;font-size:1.187rem;line-height:1.5;margin:0 0 1.362em 0;}
 .contentCallout{width:38.198%}
@@ -91,7 +91,7 @@ main h1,footer h1,main h2,footer h2,main h3,footer h3,main .leader,footer .leade
 *[data-module="slideshow"] .swipeNav{display:none}
 *[data-module="slideshow"] .portfolioHeading{display:inline-block}
 *[data-module="slideshow"] *[data-control="stage"]{display:inline-block;margin-left:2.75em;overflow:hidden;width:91.796%;}
-*[data-module="slideshow"] .itemsWrapper{-webkit-transition:.5s all linear;-moz-transition:.5s all linear;-o-transition:.5s all linear;-ms-transition:.5s all linear;transition:.5s all linear;width:500%;}
+*[data-module="slideshow"] .itemsWrapper{-webkit-transition:normalize('transition',0.5s all linear,webkit);-moz-transition:normalize('transition',0.5s all linear,moz);-o-transition:normalize('transition',0.5s all linear,o);-ms-transition:normalize('transition',0.5s all linear,ms);transition:normalize('transition',0.5s all linear);width:500%;}
 *[data-module="slideshow"] *[data-control="navigate"]{color:#00f;cursor:pointer;display:block;font-size:2rem;position:absolute;}
 *[data-module="slideshow"] *[data-control="navigate"].backwardTop{top:8%;left:3%}
 *[data-module="slideshow"] *[data-control="navigate"].forwardTop{top:8%;left:94%}
@@ -121,7 +121,8 @@ main h1,footer h1,main h2,footer h2,main h3,footer h3,main .leader,footer .leade
 .sidebar .webFormula dd,.sidebar .webFormula .oo{margin-left:12.75%;}
 .sidebar .webFormula .ooContainer{margin:0;}
 .sidebar .webFormula .ooContainer .icon-info{color:#00f;font-size:2rem;position:relative;top:1.5em}
-.portfolio,.behindTheCurtain,.currentExperiments{background-color:#ddd;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";margin:4.235em 0;}
+.behindTheCurtain,.currentExperiments{background-color:#ddd;opacity:.9;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";filter:alpha(opacity=90);margin:4.235em 0;}
+.portfolio{background-color:#ddd;margin:4.235em 0;}
 .currentExperiments,.portfolio{padding:1.362em 2.129%;}
 .skillBucket{margin-top:4.6em}
 .portfolio h3{margin-top:0}
@@ -131,7 +132,7 @@ main h1,footer h1,main h2,footer h2,main h3,footer h3,main .leader,footer .leade
 .portfolio .nestedList .nestedlistItem{margin-left:6.62%;}
 .portfolio .shot{border:0;display:block;margin:1em auto;width:95.444%;}
 .portfolio .inspect{margin-top:0}
-footer{background-color:#ddd;opacity:.9;filter:alpha(opacity=90);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";}
+footer{background-color:#ddd;opacity:.9;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";filter:alpha(opacity=90);}
 footer .contact{padding:1.362em 2.129% 0 2.129%;}
 footer .p{padding:0 2.129%}
 footer .disclaimer{padding:0 2.129% 1.362em 2.129%;}

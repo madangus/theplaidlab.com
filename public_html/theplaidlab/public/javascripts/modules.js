@@ -52,7 +52,7 @@ thePlaidLabModules.slideshow = {
 		}
 	},
 	setupTouchSupport: function() {
-		if (typeof document.querySelector === 'function') {
+		if (typeof document.querySelector === 'function' && 'ontouchmove' in document.documentElement) {
 			var target = document.querySelector('[data-module="slideshow"]');
 			
 			// Set these working vars here so they retain values on multiple handleTouch invocations
@@ -64,6 +64,8 @@ thePlaidLabModules.slideshow = {
 			target.addEventListener('touchmove', thePlaidLabModules.slideshow.handleTouch, false); 		
 			target.addEventListener('touchcancel', thePlaidLabModules.slideshow.handleTouch, false); 		
 			target.addEventListener('touchend', thePlaidLabModules.slideshow.handleTouch, false); 
+
+			
 		} 
 	},	
 	handleTouch: function() {

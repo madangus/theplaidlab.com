@@ -10,7 +10,7 @@ html
 
 
 		<!-- goog analytics -->
-		script
+		script.
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-39685260-2']);
 			_gaq.push(['_trackPageview']);
@@ -24,7 +24,7 @@ html
 		<!-- end goog analytics -->
 
 
-		script
+		script.
 			// For debugging this gets output later
 			var lWidth = document.documentElement.clientWidth;
 			window.domsNastyGlobalOriginalLayoutViewport = lWidth;
@@ -36,19 +36,7 @@ html
 		script(src="/javascripts/modules.js")
 		script(src="/javascripts/master.js")
 
-		<!--[if lte IE 9]>
-		script		
-			document.createElement('article');
-			document.createElement('aside');
-			document.createElement('footer');
-			document.createElement('header');
-			document.createElement('main');			
-			document.createElement('nav');
-		<![endif]-->
-
-		<!--[if (lt IE 9) & (!IEMobile)]>
-		<link rel="stylesheet" href="/css/master.css" media="all">
-		<![endif]-->
+		<!--[if (lt IE 9) & (!IEMobile)]><link rel="stylesheet" href="/css/master.css" media="all"><![endif]-->
 
 	body
 		include partials/header
